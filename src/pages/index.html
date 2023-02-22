@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/src/images/blossom-orange.svg"
+    />
     <title>Blossom</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +23,96 @@
     <link rel="stylesheet" href="/dist/output.css" />
   </head>
   <body>
-    <h1 class="text-green-900">Hi</h1>
-    <a href="./logins/loginV1.html">Go to login page</a>
+    <div class="">
+      <nav>
+        <div class="flex justify-between items-center text-first shadow-md p-4">
+          <!-- Toggle Sidebar -->
+          <div
+            class="w-9 h-9 relative border border-first rounded-full text-center"
+          >
+            <i
+              class="fa-solid fa-bars-staggered absolute absolute-center align-middle"
+            ></i>
+          </div>
+
+          <!-- Menu -->
+          <div class="flex justify-center space-x-5">
+            <a href="#">
+              <i class="fa-solid fa-magnifying-glass text-lg"></i>
+            </a>
+            <a href="#">
+              <i class="fa-regular fa-bell text-xl"></i>
+            </a>
+            <a href="#">
+              <i class="fa-regular fa-moon text-xl"></i>
+            </a>
+          </div>
+
+          <!-- Profile -->
+          <div class="w-10 h-10">
+            <img
+              src="/src/images/profiles/julian-wan-WNoLnJo7tS8-unsplash.jpg"
+              alt="christopher"
+              class="rounded-full border-2 border-third/60"
+            />
+          </div>
+        </div>
+      </nav>
+      <aside>
+        <div class="bg-black/60 text-white fixed inset-0 h-screen">
+          <div class="bg-first w-5/6 p-4 h-screen">
+            <div class="flex justify-between items-center">
+              <div class="flex items-center space-x-2">
+                <img
+                  src="/src/images/blossom-light.svg"
+                  alt="blossom"
+                  class="w-10"
+                />
+                <div class="text-xl font-semibold">Blossom</div>
+              </div>
+              <label for="sidebar">
+                <i class="fa-regular fa-circle-xmark text-white/70 text-xl"></i>
+              </label>
+            </div>
+            <nav>
+              <div class="p-2">
+                <div class="uppercase opacity-80 text-sm p-4">Start menu</div>
+                <ul class="space-y-2">
+                  <li>
+                    <label
+                      class="p-4 bg-white/10 w-full rounded-xl flex justify-between items-center"
+                    >
+                      <div class="space-x-2">
+                        <i class="fa-solid fa-house text-lg"></i>
+                        <span> Dashboard </span>
+                      </div>
+                    </label>
+                  </li>
+                  <li>
+                    <input
+                      type="checkbox"
+                      class="absolute opacity-0"
+                      name="crud"
+                      id="crud"
+                    />
+                    <label
+                      for="crud"
+                      class="p-4 bg-white/10 w-full rounded-xl flex justify-between items-center"
+                    >
+                      <div class="space-x-2">
+                        <i class="fa-solid fa-house text-lg"></i>
+                        <span> Crud </span>
+                      </div>
+                      <i class="fa-solid fa-chevron-down text-sm"></i>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </aside>
+      <main class="bg-second">main</main>
+    </div>
   </body>
 </html>
