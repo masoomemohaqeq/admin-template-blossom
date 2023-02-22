@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  @font-face {
+    font-family: NotoSans;
+    src: url("../fonts/NotoSans-ExtraLight.ttf");
+    font-weight: 200;
+  }
+  @font-face {
+    font-family: NotoSans;
+    src: url("../fonts/NotoSans-Light.ttf");
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: NotoSans;
+    src: url("../fonts/NotoSans-Regular.ttf");
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: NotoSans;
+    src: url("../fonts/NotoSans-Medium.ttf");
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: NotoSans;
+    src: url("../fonts/NotoSans-SemiBold.ttf");
+    font-weight: 600;
+  }
+
+  @font-face {
+    font-family: NotoSans;
+    src: url("../fonts/NotoSans-Bold.ttf");
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: NotoSans;
+    src: url("../fonts/NotoSans-ExtraBold.ttf");
+    font-weight: 800;
+  }
+
+  @font-face {
+    font-family: NotoSans;
+    src: url("../fonts/NotoSans-Black.ttf");
+    font-weight: 900;
+  }
+  html,
+  input,
+  textarea {
+    font-family: "Noto Sans", sans-serif;
+  }
+
+  html {
+    font-size: 13px;
+  }
+
+  h1 {
+    @apply text-5xl;
+  }
+
+  h2 {
+    @apply text-4xl;
+  }
+
+  h3 {
+    @apply text-3xl;
+  }
+
+  h4 {
+    @apply text-2xl;
+  }
+
+  h5 {
+    @apply text-xl;
+  }
+
+  h6 {
+    @apply text-lg;
+  }
+}
+
+/* Global classes */
+
+.absolute-center-y {
+  @apply absolute top-1/2 -translate-y-1/2;
+}
+
+.absolute-center-x {
+  @apply absolute left-1/2 -translate-x-1/2;
+}
+
+.absolute-center {
+  @apply absolute-center-y absolute-center-x;
+}
+/* Forms */
+
+input,
+textarea {
+  @apply border rounded-md py-2 px-3;
+}
+
+label {
+  @apply text-t-light;
+}
+
+.float-input {
+  @apply relative;
+}
+
+.float-input input::placeholder {
+  @apply opacity-0;
+}
+
+.float-input .float-label {
+  @apply transition-all absolute-center-y left-3;
+}
+
+.float-input input:focus,
+.float-input input:not(:placeholder-shown) {
+  @apply border-first;
+}
+
+.float-input input:focus + .float-label,
+.float-input input:not(:placeholder-shown) + .float-label {
+  @apply text-xs top-0 bg-white px-1 text-first;
+}
+
+/* Buttons */
+.btn {
+  @apply py-2 px-4 rounded-md text-center text-sm font-semibold tracking-wide;
+}
+
+.btn-first {
+  @apply bg-first text-t-extra-light;
+}
+
+.btn-link-first {
+  @apply text-first;
+}
