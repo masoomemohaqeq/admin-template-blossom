@@ -23,54 +23,85 @@
     <link rel="stylesheet" href="/dist/output.css" />
   </head>
   <body>
-    <div class="">
-      <nav>
-        <div class="flex justify-between items-center text-first shadow-md p-4">
+    <div class="xl:grid xl:grid-rows-1 xl:grid-cols-6">
+      <nav class="xl:col-start-2 xl:col-end-7 xl:row-start-1 xl:row-end-2">
+        <div
+          class="flex justify-between items-center text-first shadow-colored p-4 bg-white h-[60px]"
+        >
           <!-- Toggle Sidebar -->
           <div
-            class="w-9 h-9 relative border border-first rounded-full text-center"
+            class="w-9 h-9 relative border border-first rounded-full text-center active-state-effect xl:hidden"
           >
-            <i
-              class="fa-solid fa-bars-staggered absolute absolute-center align-middle"
-            ></i>
+            <label for="toggleSidebar" class="inline-block w-full h-full">
+              <i
+                class="fa-solid fa-bars-staggered absolute absolute-center align-middle"
+              ></i>
+            </label>
           </div>
 
           <!-- Menu -->
-          <div class="flex justify-center space-x-5">
+          <div class="flex justify-center space-x-5 z-10">
             <a href="#">
               <i class="fa-solid fa-magnifying-glass text-lg"></i>
             </a>
-            <a href="#">
-              <i class="fa-regular fa-bell text-xl"></i>
+            <a href="#" class="">
+              <i class="fa-regular fa-bell text-xl relative">
+                <span
+                  class="animate-ping absolute top-1 right-0 h-2 w-2 rounded-full bg-supporting-second opacity-75"
+                ></span>
+                <span
+                  class="absolute top-1 right-0 rounded-full h-2 w-2 bg-supporting-second"
+                ></span>
+              </i>
             </a>
+
             <a href="#">
               <i class="fa-regular fa-moon text-xl"></i>
             </a>
           </div>
 
           <!-- Profile -->
-          <div class="w-10 h-10">
-            <img
-              src="/src/images/profiles/julian-wan-WNoLnJo7tS8-unsplash.jpg"
-              alt="christopher"
-              class="rounded-full border-2 border-third/60"
-            />
+          <div class="w-fit flex items-center gap-2">
+            <div class="w-11 h-11">
+              <img
+                src="/src/images/profiles/julian-wan-WNoLnJo7tS8-unsplash.jpg"
+                alt="christopher"
+                class="rounded-full border-2 border-first/60"
+              />
+            </div>
+            <div class="text-sm text-first hidden md:block">
+              Jhon Black
+              <p class="text-third text-xs">Frontend developer</p>
+            </div>
           </div>
         </div>
       </nav>
-      <aside>
-        <div class="bg-black/60 text-white fixed inset-0 h-screen">
-          <div class="bg-first w-5/6 p-4 h-screen">
+
+      <!-- Sidebar -->
+      <aside class="xl:col-start-1 xl:col-end-2">
+        <input
+          type="checkbox"
+          class="toggleSidebar absolute w-0 h-0 opacity-0"
+          name="toggleSidebar"
+          id="toggleSidebar"
+        />
+        <div
+          class="invisible opacity-0 dash-sidebar h-full bg-black/70 text-white fixed inset-0 transition-all duration-200 z-20 xl:relative xl:visible xl:opacity-100 xl:z-0"
+        >
+          <div
+            class="bg-third w-5/6 p-4 h-screen dash-sidebar-menu -translate-x-96 transition-all md:max-w-sm xl:translate-x-0 xl:w-full"
+          >
             <div class="flex justify-between items-center">
               <div class="flex items-center space-x-2">
                 <img
                   src="/src/images/blossom-light.svg"
                   alt="blossom"
-                  class="w-10"
+                  class="w-8"
                 />
                 <div class="text-xl font-semibold">Blossom</div>
               </div>
-              <label for="sidebar">
+
+              <label for="toggleSidebar" class="cursor-pointer xl:hidden">
                 <i class="fa-regular fa-circle-xmark text-white/70 text-xl"></i>
               </label>
             </div>
@@ -80,12 +111,14 @@
                 <ul class="space-y-2">
                   <li>
                     <label
-                      class="p-4 bg-white/10 w-full rounded-xl flex justify-between items-center"
+                      class="p-4 w-full rounded-xl flex justify-between items-center current"
                     >
-                      <div class="space-x-2">
-                        <i class="fa-solid fa-house text-lg"></i>
-                        <span> Dashboard </span>
-                      </div>
+                      <a href="#">
+                        <div class="space-x-2">
+                          <i class="fa-solid fa-house text-lg"></i>
+                          <span> Dashboard </span>
+                        </div>
+                      </a>
                     </label>
                   </li>
                   <li>
@@ -97,13 +130,55 @@
                     />
                     <label
                       for="crud"
-                      class="p-4 bg-white/10 w-full rounded-xl flex justify-between items-center"
+                      class="p-4 w-full rounded-xl flex justify-between items-center"
                     >
                       <div class="space-x-2">
-                        <i class="fa-solid fa-house text-lg"></i>
+                        <i class="fa-regular fa-pen-to-square"></i>
                         <span> Crud </span>
                       </div>
-                      <i class="fa-solid fa-chevron-down text-sm"></i>
+                      <i
+                        class="fa-solid fa-chevron-down text-sm transition-all"
+                      ></i>
+                    </label>
+                    <ul
+                      class="sub-menu rounded-xl overflow-hidden max-h-0 transition-all duration-300"
+                    >
+                      <li>
+                        <label
+                          class="p-4 w-full flex justify-between items-center"
+                        >
+                          <a href="#">
+                            <div class="space-x-2">
+                              <i class="fa-solid fa-list"></i>
+                              <span> Data List </span>
+                            </div>
+                          </a>
+                        </label>
+                      </li>
+                      <li>
+                        <label
+                          class="p-4 w-full flex justify-between items-center"
+                        >
+                          <a href="#">
+                            <div class="space-x-2">
+                              <i class="fa-regular fa-file"></i>
+                              <span> Form </span>
+                            </div>
+                          </a>
+                        </label>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <label
+                      class="p-4 w-full rounded-xl flex justify-between items-center"
+                    >
+                      <a href="#">
+                        <div class="space-x-2">
+                          <i class="fa-regular fa-user"></i>
+                          <span> Profile </span>
+                        </div>
+                      </a>
                     </label>
                   </li>
                 </ul>
@@ -112,7 +187,80 @@
           </div>
         </div>
       </aside>
-      <main class="bg-second">main</main>
+
+      <!-- Main -->
+      <main class="xl:col-start-2 xl:col-end-7 xl:row-start-1 xl:mt-[60px]">
+        <div class="bg-third/5 p-4 w-full h-full space-y-5">
+          <div class="box shadow-colored">
+            <div class="p-3">
+              <h4>Welcome to Dashboard</h4>
+              <h6 class="text-t-light font-medium">
+                You can choose options in sidebar
+              </h6>
+            </div>
+            <div>
+              <a href="#" class="btn btn-first m-3">View More</a>
+            </div>
+          </div>
+          <div class="box shadow-colored">
+            <div class="p-3">
+              <h4>Statistics</h4>
+            </div>
+            <div class="grid grid-cols-2 grid-rows-2 space-y-2">
+              <div class="p-2 flex items-center gap-3">
+                <div
+                  class="w-12 h-12 rounded-full bg-supporting-first/30 relative"
+                >
+                  <i
+                    class="fa-solid fa-chart-pie text-2xl text-supporting-first/80 absolute-center"
+                  ></i>
+                </div>
+                <div class="text-2xl">
+                  <span class="font-medium text-t-middle">285k</span>
+                  <p class="text-t-light text-sm">Sales</p>
+                </div>
+              </div>
+              <div class="p-2 flex items-center gap-3">
+                <div
+                  class="w-12 h-12 rounded-full bg-supporting-second/30 relative"
+                >
+                  <i
+                    class="fa-solid fa-cart-shopping text-2xl text-supporting-second absolute-center"
+                  ></i>
+                </div>
+                <div class="text-2xl">
+                  <span class="font-medium text-t-middle">1.423k</span>
+                  <p class="text-t-light text-sm">Sales</p>
+                </div>
+              </div>
+              <div class="p-2 flex items-center gap-3">
+                <div
+                  class="w-12 h-12 rounded-full bg-supporting-third/30 relative"
+                >
+                  <i
+                    class="fa-solid fa-dollar-sign text-2xl text-supporting-third absolute-center"
+                  ></i>
+                </div>
+                <div class="text-2xl">
+                  <span class="font-medium text-t-middle">8.549k</span>
+                  <p class="text-t-light text-sm">Sales</p>
+                </div>
+              </div>
+              <div class="p-2 flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-second/30 relative">
+                  <i
+                    class="fa-solid fa-person text-3xl text-second absolute-center"
+                  ></i>
+                </div>
+                <div class="text-2xl">
+                  <span class="font-medium text-t-middle">9745k</span>
+                  <p class="text-t-light text-sm">Sales</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
   </body>
 </html>

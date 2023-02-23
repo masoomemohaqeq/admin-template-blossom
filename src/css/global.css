@@ -94,6 +94,11 @@
 .absolute-center {
   @apply absolute-center-y absolute-center-x;
 }
+
+.active-state-effect:active {
+  @apply bg-first/20 transition-all;
+}
+
 /* Forms */
 
 input,
@@ -129,7 +134,7 @@ textarea {
 
 /* Buttons */
 .btn {
-  @apply py-2 px-4 rounded-md text-center text-sm font-semibold tracking-wide;
+  @apply py-2 px-4 rounded-md text-center text-sm font-semibold tracking-wide inline-block;
 }
 
 .btn-first {
@@ -138,4 +143,47 @@ textarea {
 
 .btn-link-first {
   @apply text-first;
+}
+
+/* Dashboard Sidebar */
+
+.toggleSidebar:checked + .dash-sidebar {
+  @apply visible opacity-100;
+}
+
+.toggleSidebar:checked + .dash-sidebar > .dash-sidebar-menu {
+  @apply translate-x-0;
+}
+
+.dash-sidebar label:active {
+  @apply active-state-effect;
+}
+
+.dash-sidebar input[type="checkbox"]:checked ~ ul,
+.dash-sidebar .current {
+  @apply bg-white/10;
+}
+
+.dash-sidebar input[type="checkbox"]:checked ~ ul {
+  @apply max-h-96;
+}
+
+.dash-sidebar
+  input[type="checkbox"]:checked
+  + label
+  > i.fa-chevron-down::before {
+  content: "\f077";
+}
+
+.dash-sidebar .sub-menu li {
+  @apply translate-x-20 opacity-0 transition-all duration-200 ease-out;
+}
+
+.dash-sidebar input[type="checkbox"]:checked ~ ul > li {
+  @apply translate-x-0 opacity-100;
+}
+
+/* dashboard box */
+.box {
+  @apply bg-white rounded-md p-2;
 }
