@@ -122,6 +122,16 @@
   @apply text-first;
 }
 
+/* Modals */
+
+.toggle-modal:checked + .modal-wrapper {
+  @apply visible opacity-100;
+}
+
+.toggle-modal:checked + .modal-wrapper > div {
+  @apply scale-100;
+}
+
 /* Forms */
 
 input,

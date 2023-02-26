@@ -3,7 +3,6 @@ document.body.addEventListener("click", function (event) {
   let isClickInside = [
     ...document.querySelectorAll(".toggle-floating-btn"),
   ].some((el) => el.contains(event.target));
-
   let allChkTogglers = document.querySelectorAll(".toggle-floating-menu");
   if (isClickInside) {
     let specifiedInput = event.target

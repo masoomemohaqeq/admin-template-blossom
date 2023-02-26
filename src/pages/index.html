@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/dist/output.css" />
   </head>
   <body>
-    <div class="xl:grid xl:grid-rows-1 xl:grid-cols-6 bg-third/5">
+    <div class="xl:grid xl:grid-rows-1 xl:grid-cols-6 bg-third/5 dark:bg-black">
       <nav
         class="xl:col-start-2 xl:col-end-7 xl:row-start-1 xl:row-end-2 xl:p-4"
       >
@@ -44,10 +44,120 @@
           <!-- Menu -->
           <div class="flex md:flex-1 z-10">
             <!-- Search bar -->
-            <a href="#" class="mx-3 space-x-2">
-              <i class="fa-solid fa-magnifying-glass text-xl"></i>
-              <span class="hidden md:inline-block">Search...</span>
-            </a>
+            <div class="relative">
+              <label for="toggle-search-modal">
+                <div class="mx-3 space-x-2 cursor-pointer">
+                  <i class="fa-solid fa-magnifying-glass text-xl"></i>
+                  <span class="hidden md:inline-block">Search...</span>
+                </div>
+              </label>
+              <input
+                type="checkbox"
+                name="toggle-search-modal"
+                id="toggle-search-modal"
+                class="toggle-modal absolute w-0 h-0"
+              />
+              <div
+                class="modal-wrapper w-screen h-screen fixed inset-0 invisible opacity-0 transition-all"
+              >
+                <label
+                  for="toggle-search-modal"
+                  class="absolute w-full h-full bg-black/10"
+                ></label>
+                <div
+                  class="modal w-5/6 md:w-2/6 bg-white absolute-center scale-0 transition-all divide-y rounded-md"
+                >
+                  <div
+                    class="modal-header flex justify-between items-center space-x-3 p-6"
+                  >
+                    <i class="fa-solid fa-magnifying-glass text-xl"></i>
+                    <div class="flex-1">
+                      <input
+                        type="text"
+                        name="search-panel"
+                        id="search-panel"
+                        class="border-none w-full"
+                        placeholder="type here..."
+                        autofocus
+                      />
+                    </div>
+                    <label
+                      for="toggle-search-modal"
+                      class="hover:bg-black/5 w-10 h-10 cursor-pointer rounded-md flex justify-center items-center transition-all"
+                    >
+                      <i class="fa-solid fa-xmark text-xl"></i>
+                    </label>
+                  </div>
+                  <div class="modal-body p-6">
+                    <div class="search-box">
+                      <div class="uppercase text-t-light py-3">
+                        Popular Searches
+                      </div>
+                      <ul>
+                        <li>
+                          <a
+                            href="#"
+                            class="inline-block w-full py-3 space-x-2 hover:text-first"
+                          >
+                            <i class="fa-solid fa-headset"></i> <span>CRM</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            class="inline-block w-full py-3 space-x-2 hover:text-first"
+                          >
+                            <i class="fa-regular fa-user"></i>
+                            <span>User Profile</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            class="inline-block w-full py-3 space-x-2 hover:text-first"
+                          >
+                            <i class="fa-regular fa-calendar"></i>
+                            <span>Calendar</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="search-box">
+                      <div class="uppercase text-t-light py-3">Pages</div>
+                      <ul>
+                        <li>
+                          <a
+                            href="#"
+                            class="inline-block w-full py-3 space-x-2 hover:text-first"
+                          >
+                            <i class="fa-regular fa-calendar"></i>
+                            <span>Calendar</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            class="inline-block w-full py-3 space-x-2 hover:text-first"
+                          >
+                            <i class="fa-regular fa-dollar-sign"></i>
+                            <span>Pricing</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            class="inline-block w-full py-3 space-x-2 hover:text-first"
+                          >
+                            <i class="fa-regular fa-user"></i>
+                            <span>User Profile</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <!-- Notif & Mode -->
             <div class="space-x-5 mx-3 md:mr-0 md:ml-auto">
@@ -68,7 +178,6 @@
                   name="toggle-notif"
                   id="toggle-notif"
                   class="toggle-floating-menu absolute w-0 h-0 opacity-0"
-                  checked
                 />
                 <!-- Notif Menu -->
                 <div
@@ -87,7 +196,7 @@
                       >
                         <img
                           src="/src/images/profiles/julian-wan-WNoLnJo7tS8-unsplash.jpg"
-                          class="w-12 h-12 rounded-md"
+                          class="w-12 h-12 rounded-md object-cover"
                           alt=""
                         />
                         <div class="flex-1">
@@ -135,6 +244,25 @@
                           </p>
                         </div>
                         <span class="text-t-mid-light text-base">11 Aug</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center w-full space-x-2 px-6 py-5 transition hover:bg-third/5 rounded-md"
+                      >
+                        <img
+                          src="/src/images/profiles/aiony-haust-3TLl_97HNJo-unsplash.jpg"
+                          class="w-12 h-12 rounded-md object-cover"
+                          alt=""
+                        />
+                        <div class="flex-1">
+                          <h6>New message received.</h6>
+                          <p class="text-t-mid-light text-base">
+                            You have unread messages
+                          </p>
+                        </div>
+                        <span class="text-t-mid-light text-base">10 Aug</span>
                       </a>
                     </li>
                   </ul>
