@@ -53,7 +53,7 @@
   }
 
   html {
-    font-size: 13px;
+    font-size: 10px;
   }
 
   h1 {
@@ -99,6 +99,29 @@
   @apply bg-first/20 transition-all;
 }
 
+/* badges */
+
+.badge {
+  @apply text-sm;
+}
+
+.badge-primary {
+  @apply badge bg-supporting-third/10 text-first px-3 py-1 rounded-full;
+}
+
+/* Buttons */
+.btn {
+  @apply py-3 px-6 rounded-md text-center text-sm font-semibold tracking-wide inline-block;
+}
+
+.btn-first {
+  @apply btn bg-first text-t-extra-light;
+}
+
+.btn-link-first {
+  @apply text-first;
+}
+
 /* Forms */
 
 input,
@@ -130,19 +153,6 @@ textarea {
 .float-input input:focus + .float-label,
 .float-input input:not(:placeholder-shown) + .float-label {
   @apply text-xs top-0 bg-white px-1 text-first;
-}
-
-/* Buttons */
-.btn {
-  @apply py-2 px-4 rounded-md text-center text-sm font-semibold tracking-wide inline-block;
-}
-
-.btn-first {
-  @apply bg-first text-t-extra-light;
-}
-
-.btn-link-first {
-  @apply text-first;
 }
 
 /* Dashboard Sidebar */
@@ -186,4 +196,10 @@ textarea {
 /* dashboard box */
 .box {
   @apply bg-white rounded-md p-2;
+}
+
+/* dashboard nav */
+
+.toggle-floating-menu:checked + .floating-menu {
+  @apply scale-100 opacity-100;
 }

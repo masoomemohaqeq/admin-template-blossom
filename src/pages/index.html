@@ -11,67 +11,223 @@
     />
     <title>Blossom</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
-    />
+    /> -->
 
     <link rel="stylesheet" href="/src/fontawesome/css/all.min.css" />
 
     <link rel="stylesheet" href="/dist/output.css" />
   </head>
   <body>
-    <div class="xl:grid xl:grid-rows-1 xl:grid-cols-6">
-      <nav class="xl:col-start-2 xl:col-end-7 xl:row-start-1 xl:row-end-2">
+    <div class="xl:grid xl:grid-rows-1 xl:grid-cols-6 bg-third/5">
+      <nav
+        class="xl:col-start-2 xl:col-end-7 xl:row-start-1 xl:row-end-2 xl:p-4"
+      >
         <div
-          class="flex justify-between items-center text-first shadow-colored p-4 bg-white h-[60px]"
+          class="flex justify-between items-center text-t-middle shadow-colored bg-white p-4 h-[50px] gap-3 xl:rounded-md"
         >
           <!-- Toggle Sidebar -->
           <div
-            class="w-9 h-9 relative border border-first rounded-full text-center active-state-effect xl:hidden"
+            class="w-11 h-11 relative border border-t-middle rounded-full text-center active-state-effect xl:hidden"
           >
             <label for="toggleSidebar" class="inline-block w-full h-full">
               <i
-                class="fa-solid fa-bars-staggered absolute absolute-center align-middle"
+                class="fa-solid fa-bars-staggered absolute absolute-center align-middle text-2xl"
               ></i>
             </label>
           </div>
 
           <!-- Menu -->
-          <div class="flex justify-center space-x-5 z-10">
-            <a href="#">
-              <i class="fa-solid fa-magnifying-glass text-lg"></i>
-            </a>
-            <a href="#" class="">
-              <i class="fa-regular fa-bell text-xl relative">
-                <span
-                  class="animate-ping absolute top-1 right-0 h-2 w-2 rounded-full bg-supporting-second opacity-75"
-                ></span>
-                <span
-                  class="absolute top-1 right-0 rounded-full h-2 w-2 bg-supporting-second"
-                ></span>
-              </i>
+          <div class="flex md:flex-1 z-10">
+            <!-- Search bar -->
+            <a href="#" class="mx-3 space-x-2">
+              <i class="fa-solid fa-magnifying-glass text-xl"></i>
+              <span class="hidden md:inline-block">Search...</span>
             </a>
 
-            <a href="#">
-              <i class="fa-regular fa-moon text-xl"></i>
-            </a>
+            <!-- Notif & Mode -->
+            <div class="space-x-5 mx-3 md:mr-0 md:ml-auto">
+              <div class="floating-menu-container relative inline-block">
+                <a href="#" class="toggle-floating-btn cursor-pointer">
+                  <i class="fa-regular fa-bell text-2xl relative">
+                    <span
+                      class="animate-ping absolute top-1 right-0 h-2 w-2 rounded-full bg-red-500 opacity-75"
+                    ></span>
+                    <span
+                      class="absolute top-1 right-0 rounded-full h-2 w-2 bg-red-500"
+                    ></span>
+                  </i>
+                </a>
+
+                <input
+                  type="checkbox"
+                  name="toggle-notif"
+                  id="toggle-notif"
+                  class="toggle-floating-menu absolute w-0 h-0 opacity-0"
+                  checked
+                />
+                <!-- Notif Menu -->
+                <div
+                  class="floating-menu absolute origin-top-right w-96 bg-white rounded-lg top-full mt-7 right-0 shadow-custom text-lg text-t-middle transition-all duration-500 opacity-0 scale-0 z-20"
+                >
+                  <div class="flex justify-between items-center px-6 py-5">
+                    <div>Notifications</div>
+                    <span class="badge-primary">5 New</span>
+                  </div>
+                  <hr />
+                  <ul class="divide-y">
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center w-full space-x-2 px-6 py-5 transition hover:bg-third/5 rounded-md"
+                      >
+                        <img
+                          src="/src/images/profiles/julian-wan-WNoLnJo7tS8-unsplash.jpg"
+                          class="w-12 h-12 rounded-md"
+                          alt=""
+                        />
+                        <div class="flex-1">
+                          <h6>Congratulation!</h6>
+                          <p class="text-t-mid-light text-base">
+                            You got a new badge
+                          </p>
+                        </div>
+                        <span class="text-t-mid-light text-base">Today</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center w-full space-x-2 px-6 py-5 transition hover:bg-third/5 rounded-md"
+                      >
+                        <div class="w-12 h-12 rounded-md bg-first/20 relative">
+                          <i
+                            class="fa-solid fa-user-plus text-2xl text-first absolute-center"
+                          ></i>
+                        </div>
+                        <div class="flex-1">
+                          <h6>New user registered.</h6>
+                          <p class="text-t-mid-light text-base">5 hours ago</p>
+                        </div>
+                        <span class="text-t-mid-light text-base"
+                          >Yesterday</span
+                        >
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center w-full space-x-2 px-6 py-5 transition hover:bg-third/5 rounded-md"
+                      >
+                        <img
+                          src="/src/images/profiles/christopher-campbell-rDEOVtE7vOs-unsplash.jpg"
+                          class="w-12 h-12 rounded-md object-cover"
+                          alt=""
+                        />
+                        <div class="flex-1">
+                          <h6>New message received.</h6>
+                          <p class="text-t-mid-light text-base">
+                            You have unread messages
+                          </p>
+                        </div>
+                        <span class="text-t-mid-light text-base">11 Aug</span>
+                      </a>
+                    </li>
+                  </ul>
+                  <hr />
+                  <div class="px-6 py-5 hover:bg-third/5 rounded-md">
+                    <a href="#" class="btn-first uppercase w-full"
+                      >read all notifications</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!--  Mode -->
+              <a href="#" class="inline-block">
+                <i class="fa-regular fa-moon text-2xl"></i>
+              </a>
+            </div>
           </div>
 
           <!-- Profile -->
-          <div class="w-fit flex items-center gap-2">
-            <div class="w-11 h-11">
-              <img
-                src="/src/images/profiles/julian-wan-WNoLnJo7tS8-unsplash.jpg"
-                alt="christopher"
-                class="rounded-full border-2 border-first/60"
-              />
+          <div class="floating-menu-container relative">
+            <div
+              class="toggle-floating-btn flex items-center gap-3 cursor-pointer"
+            >
+              <div class="w-12 h-12">
+                <img
+                  src="/src/images/profiles/julian-wan-WNoLnJo7tS8-unsplash.jpg"
+                  alt="christopher"
+                  class="rounded-lg"
+                />
+              </div>
+              <div class="text-t-middle hidden md:inline-block">
+                John Black
+                <p class="text-t-middle text-sm">Frontend developer</p>
+              </div>
             </div>
-            <div class="text-sm text-first hidden md:block">
-              Jhon Black
-              <p class="text-third text-xs">Frontend developer</p>
+
+            <input
+              type="checkbox"
+              name="toggle-profile"
+              id="toggle-profile"
+              class="toggle-floating-menu absolute w-0 h-0 opacity-0"
+            />
+            <!-- Profile Menu -->
+            <div
+              class="floating-menu absolute scale-0 origin-top-right w-72 bg-white rounded-lg top-full mt-5 right-0 shadow-md text-lg text-t-mid-light transition-all duration-500 opacity-0 z-20"
+            >
+              <div class="flex items-center p-6 gap-2">
+                <div class="w-14 h-14">
+                  <img
+                    src="/src/images/profiles/julian-wan-WNoLnJo7tS8-unsplash.jpg"
+                    alt="christopher"
+                    class="rounded-lg"
+                  />
+                </div>
+                <div class="text-black font-bold">
+                  John Black
+                  <p class="text-t-mid-light text-sm">Frontend developer</p>
+                </div>
+              </div>
+              <hr />
+              <ul class="p-4 space-y-2">
+                <li>
+                  <a
+                    href="#"
+                    class="inline-block w-full space-x-2 p-2 transition hover:bg-third/10 rounded-md"
+                  >
+                    <i class="fa-regular fa-user"></i>
+                    <span>Profile</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-block w-full space-x-2 p-2 transition hover:bg-third/10 rounded-md"
+                  >
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                  </a>
+                </li>
+              </ul>
+              <hr />
+              <ul class="p-4 space-y-2">
+                <li>
+                  <a
+                    href="# "
+                    class="inline-block w-full space-x-2 p-2 transition hover:bg-third/10 rounded-md"
+                  >
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Sign Out</span>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -89,7 +245,7 @@
           class="invisible opacity-0 dash-sidebar h-full bg-black/70 text-white fixed inset-0 transition-all duration-200 z-20 xl:relative xl:visible xl:opacity-100 xl:z-0"
         >
           <div
-            class="bg-third w-5/6 p-4 h-screen dash-sidebar-menu -translate-x-96 transition-all md:max-w-sm xl:translate-x-0 xl:w-full"
+            class="bg-third w-5/6 p-4 h-screen dash-sidebar-menu -translate-x-96 transition-all max-w-sm xl:max-w-none xl:translate-x-0 xl:w-full"
           >
             <div class="flex justify-between items-center">
               <div class="flex items-center space-x-2">
@@ -189,8 +345,10 @@
       </aside>
 
       <!-- Main -->
-      <main class="xl:col-start-2 xl:col-end-7 xl:row-start-1 xl:mt-[60px]">
-        <div class="bg-third/5 p-4 w-full h-full space-y-5">
+      <main
+        class="xl:col-start-2 xl:col-end-7 xl:row-start-1 xl:mt-[62px] xl:container xl:mx-auto min-h-screen"
+      >
+        <div class="p-4 w-full h-full space-y-5">
           <div class="box shadow-colored">
             <div class="p-3">
               <h4>Welcome to Dashboard</h4>
@@ -199,7 +357,7 @@
               </h6>
             </div>
             <div>
-              <a href="#" class="btn btn-first m-3">View More</a>
+              <a href="#" class="btn-first m-3">View More</a>
             </div>
           </div>
           <div class="box shadow-colored">
@@ -262,5 +420,7 @@
         </div>
       </main>
     </div>
+
+    <script src="/src/js/global.js"></script>
   </body>
 </html>
