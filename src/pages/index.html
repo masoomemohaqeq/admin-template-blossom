@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" data-mode="light">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -23,12 +23,14 @@
     <link rel="stylesheet" href="/dist/output.css" />
   </head>
   <body>
-    <div class="xl:grid xl:grid-rows-1 xl:grid-cols-6 bg-third/5 dark:bg-black">
+    <div
+      class="xl:grid xl:grid-rows-1 xl:grid-cols-6 bg-third/5 dark:bg-dark-first dark:text-t-dark-first"
+    >
       <nav
         class="xl:col-start-2 xl:col-end-7 xl:row-start-1 xl:row-end-2 xl:p-4"
       >
         <div
-          class="flex justify-between items-center text-t-middle shadow-colored bg-white p-4 h-[50px] gap-3 xl:rounded-md"
+          class="flex justify-between items-center text-t-middle shadow-colored bg-white p-4 h-[50px] gap-3 xl:rounded-md dark:bg-dark-second dark:text-t-dark-first dark:shadow-md"
         >
           <!-- Toggle Sidebar -->
           <div
@@ -62,10 +64,10 @@
               >
                 <label
                   for="toggle-search-modal"
-                  class="absolute w-full h-full bg-black/10"
+                  class="absolute w-full h-full bg-black/10 dark:bg-white/10"
                 ></label>
                 <div
-                  class="modal w-5/6 md:w-2/6 bg-white absolute-center scale-0 transition-all divide-y rounded-md"
+                  class="modal w-5/6 md:w-2/6 bg-white absolute-center scale-0 transition-all divide-y rounded-md dark:bg-dark-first dark:text-t-dark-second dark:divide-t-light"
                 >
                   <div
                     class="modal-header flex justify-between items-center space-x-3 p-6"
@@ -76,7 +78,7 @@
                         type="text"
                         name="search-panel"
                         id="search-panel"
-                        class="border-none w-full"
+                        class="border-none w-full text-lg dark:bg-dark-first"
                         placeholder="type here..."
                         autofocus
                       />
@@ -90,7 +92,9 @@
                   </div>
                   <div class="modal-body p-6">
                     <div class="search-box">
-                      <div class="uppercase text-t-light py-3">
+                      <div
+                        class="uppercase text-t-light py-3 dark:text-t-dark-first"
+                      >
                         Popular Searches
                       </div>
                       <ul>
@@ -123,7 +127,11 @@
                       </ul>
                     </div>
                     <div class="search-box">
-                      <div class="uppercase text-t-light py-3">Pages</div>
+                      <div
+                        class="uppercase text-t-light py-3 dark:text-t-dark-first"
+                      >
+                        Pages
+                      </div>
                       <ul>
                         <li>
                           <a
@@ -181,14 +189,16 @@
                 />
                 <!-- Notif Menu -->
                 <div
-                  class="floating-menu absolute origin-top-right w-96 bg-white rounded-lg top-full mt-7 right-0 shadow-custom text-lg text-t-middle transition-all duration-500 opacity-0 scale-0 z-20"
+                  class="floating-menu absolute origin-top-right w-96 bg-white rounded-lg top-full mt-7 right-0 shadow-custom text-lg text-t-middle transition-all duration-500 opacity-0 scale-0 z-20 dark:bg-dark-first dark:text-t-dark-first"
                 >
                   <div class="flex justify-between items-center px-6 py-5">
                     <div>Notifications</div>
                     <span class="badge-primary">5 New</span>
                   </div>
                   <hr />
-                  <ul class="divide-y">
+                  <ul
+                    class="divide-y dark:divide-y-0 dark:divide-t-dark-second"
+                  >
                     <li>
                       <a
                         href="#"
@@ -201,11 +211,16 @@
                         />
                         <div class="flex-1">
                           <h6>Congratulation!</h6>
-                          <p class="text-t-mid-light text-base">
+                          <p
+                            class="text-t-mid-light text-base dark:text-t-dark-second"
+                          >
                             You got a new badge
                           </p>
                         </div>
-                        <span class="text-t-mid-light text-base">Today</span>
+                        <span
+                          class="text-t-mid-light text-base dark:text-t-dark-second"
+                          >Today</span
+                        >
                       </a>
                     </li>
                     <li>
@@ -220,9 +235,14 @@
                         </div>
                         <div class="flex-1">
                           <h6>New user registered.</h6>
-                          <p class="text-t-mid-light text-base">5 hours ago</p>
+                          <p
+                            class="text-t-mid-light text-base dark:text-t-dark-second"
+                          >
+                            5 hours ago
+                          </p>
                         </div>
-                        <span class="text-t-mid-light text-base"
+                        <span
+                          class="text-t-mid-light text-base dark:text-t-dark-second"
                           >Yesterday</span
                         >
                       </a>
@@ -239,11 +259,16 @@
                         />
                         <div class="flex-1">
                           <h6>New message received.</h6>
-                          <p class="text-t-mid-light text-base">
+                          <p
+                            class="text-t-mid-light text-base dark:text-t-dark-second"
+                          >
                             You have unread messages
                           </p>
                         </div>
-                        <span class="text-t-mid-light text-base">11 Aug</span>
+                        <span
+                          class="text-t-mid-light text-base dark:text-t-dark-second"
+                          >11 Aug</span
+                        >
                       </a>
                     </li>
                     <li>
@@ -258,11 +283,16 @@
                         />
                         <div class="flex-1">
                           <h6>New message received.</h6>
-                          <p class="text-t-mid-light text-base">
+                          <p
+                            class="text-t-mid-light text-base dark:text-t-dark-second"
+                          >
                             You have unread messages
                           </p>
                         </div>
-                        <span class="text-t-mid-light text-base">10 Aug</span>
+                        <span
+                          class="text-t-mid-light text-base dark:text-t-dark-second"
+                          >10 Aug</span
+                        >
                       </a>
                     </li>
                   </ul>
@@ -276,9 +306,22 @@
               </div>
 
               <!--  Mode -->
-              <a href="#" class="inline-block">
-                <i class="fa-regular fa-moon text-2xl"></i>
-              </a>
+              <div class="toggle-dark-mode-wrapper inline-block relative">
+                <input
+                  type="checkbox"
+                  name="toggle-dark-mode"
+                  id="toggle-dark-mode"
+                  class="toggle-dark-mode absolute w-0 h-0"
+                />
+                <label for="toggle-dark-mode" class="cursor-pointer">
+                  <i
+                    class="fa-regular fa-moon text-2xl scale-100 transition-all"
+                  ></i>
+                  <i
+                    class="fa-regular fa-sun text-2xl scale-0 transition-all absolute inset-0"
+                  ></i>
+                </label>
+              </div>
             </div>
           </div>
 
@@ -294,9 +337,11 @@
                   class="rounded-lg"
                 />
               </div>
-              <div class="text-t-middle hidden md:inline-block">
+              <div
+                class="text-t-middle hidden md:inline-block dark:text-t-dark-first"
+              >
                 John Black
-                <p class="text-t-middle text-sm">Frontend developer</p>
+                <p class="text-sm">Frontend developer</p>
               </div>
             </div>
 
@@ -308,7 +353,7 @@
             />
             <!-- Profile Menu -->
             <div
-              class="floating-menu absolute scale-0 origin-top-right w-72 bg-white rounded-lg top-full mt-5 right-0 shadow-md text-lg text-t-mid-light transition-all duration-500 opacity-0 z-20"
+              class="floating-menu absolute scale-0 origin-top-right w-72 bg-white rounded-lg top-full mt-5 right-0 shadow-md text-lg text-t-mid-light transition-all duration-500 opacity-0 z-20 dark:bg-dark-first dark:text-t-dark-first"
             >
               <div class="flex items-center p-6 gap-2">
                 <div class="w-14 h-14">
@@ -318,9 +363,9 @@
                     class="rounded-lg"
                   />
                 </div>
-                <div class="text-black font-bold">
+                <div class="text-black font-bold dark:text-t-dark-first">
                   John Black
-                  <p class="text-t-mid-light text-sm">Frontend developer</p>
+                  <p class="text-sm">Frontend developer</p>
                 </div>
               </div>
               <hr />
@@ -370,10 +415,10 @@
           id="toggleSidebar"
         />
         <div
-          class="invisible opacity-0 dash-sidebar h-full bg-black/70 text-white fixed inset-0 transition-all duration-200 z-20 xl:relative xl:visible xl:opacity-100 xl:z-0"
+          class="invisible opacity-0 dash-sidebar h-full bg-black/70 fixed inset-0 transition-all duration-200 z-20 xl:relative xl:visible xl:opacity-100 xl:z-0"
         >
           <div
-            class="bg-third w-5/6 p-4 h-screen dash-sidebar-menu -translate-x-96 transition-all max-w-sm xl:max-w-none xl:translate-x-0 xl:w-full"
+            class="bg-third text-white w-5/6 p-4 h-screen dash-sidebar-menu -translate-x-96 transition-all max-w-sm xl:max-w-none xl:translate-x-0 xl:w-full dark:bg-dark-first dark:text-t-dark-first"
           >
             <div class="flex justify-between items-center">
               <div class="flex items-center space-x-2">
@@ -477,10 +522,10 @@
         class="xl:col-start-2 xl:col-end-7 xl:row-start-1 xl:mt-[62px] xl:container xl:mx-auto min-h-screen"
       >
         <div class="p-4 w-full h-full space-y-5">
-          <div class="box shadow-colored">
+          <div class="box">
             <div class="p-3">
-              <h4>Welcome to Dashboard</h4>
-              <h6 class="text-t-light font-medium">
+              <h4 class="box-title">Welcome to Dashboard</h4>
+              <h6 class="box-desc text-t-light font-medium dark:text-white">
                 You can choose options in sidebar
               </h6>
             </div>
@@ -488,9 +533,9 @@
               <a href="#" class="btn-first m-3">View More</a>
             </div>
           </div>
-          <div class="box shadow-colored">
+          <div class="box">
             <div class="p-3">
-              <h4>Statistics</h4>
+              <h4 class="box-title">Statistics</h4>
             </div>
             <div class="grid grid-cols-2 grid-rows-2 space-y-2">
               <div class="p-2 flex items-center gap-3">
@@ -502,8 +547,10 @@
                   ></i>
                 </div>
                 <div class="text-2xl">
-                  <span class="font-medium text-t-middle">285k</span>
-                  <p class="text-t-light text-sm">Sales</p>
+                  <span class="font-medium">285k</span>
+                  <p class="text-t-light text-sm dark:text-t-dark-second">
+                    Sales
+                  </p>
                 </div>
               </div>
               <div class="p-2 flex items-center gap-3">
@@ -515,8 +562,10 @@
                   ></i>
                 </div>
                 <div class="text-2xl">
-                  <span class="font-medium text-t-middle">1.423k</span>
-                  <p class="text-t-light text-sm">Sales</p>
+                  <span class="font-medium">1.423k</span>
+                  <p class="text-t-light text-sm dark:text-t-dark-second">
+                    Sales
+                  </p>
                 </div>
               </div>
               <div class="p-2 flex items-center gap-3">
@@ -528,8 +577,10 @@
                   ></i>
                 </div>
                 <div class="text-2xl">
-                  <span class="font-medium text-t-middle">8.549k</span>
-                  <p class="text-t-light text-sm">Sales</p>
+                  <span class="font-medium">8.549k</span>
+                  <p class="text-t-light text-sm dark:text-t-dark-second">
+                    Sales
+                  </p>
                 </div>
               </div>
               <div class="p-2 flex items-center gap-3">
@@ -539,8 +590,10 @@
                   ></i>
                 </div>
                 <div class="text-2xl">
-                  <span class="font-medium text-t-middle">9745k</span>
-                  <p class="text-t-light text-sm">Sales</p>
+                  <span class="font-medium">9745k</span>
+                  <p class="text-t-light text-sm dark:text-t-dark-second">
+                    Sales
+                  </p>
                 </div>
               </div>
             </div>

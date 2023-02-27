@@ -81,6 +81,14 @@
   }
 }
 
+hr {
+  @apply dark:border-t-dark-second dark:bg-t-dark-second dark:text-t-dark-second;
+}
+
+body * {
+  @apply transition-colors duration-[40ms];
+}
+
 /* Global classes */
 
 .absolute-center-y {
@@ -205,11 +213,21 @@ textarea {
 
 /* dashboard box */
 .box {
-  @apply bg-white rounded-md p-2;
+  @apply bg-white rounded-md p-2 shadow-colored text-t-middle  dark:shadow-md dark:bg-dark-second dark:text-t-dark-first;
 }
 
 /* dashboard nav */
 
 .toggle-floating-menu:checked + .floating-menu {
   @apply scale-100 opacity-100;
+}
+
+/* Switch dark mode */
+
+.toggle-dark-mode:checked + label i[class*="moon"] {
+  @apply scale-0;
+}
+
+.toggle-dark-mode:checked + label i[class*="sun"] {
+  @apply scale-100;
 }

@@ -20,3 +20,13 @@ document.body.addEventListener("click", function (event) {
     });
   }
 });
+
+document.querySelector("#toggle-dark-mode").addEventListener("change", (e) => {
+  if (e.target.checked) {
+    e.target.checked = true;
+    document.documentElement.dataset.mode = "dark";
+  } else {
+    e.target.checked = false;
+    document.documentElement.dataset.mode = "light";
+  }
+});
