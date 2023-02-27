@@ -21,12 +21,27 @@ document.body.addEventListener("click", function (event) {
   }
 });
 
-document.querySelector("#toggle-dark-mode").addEventListener("change", (e) => {
-  if (e.target.checked) {
-    e.target.checked = true;
-    document.documentElement.dataset.mode = "dark";
-  } else {
-    e.target.checked = false;
-    document.documentElement.dataset.mode = "light";
-  }
+document.addEventListener("DOMContentLoaded", () => {
+  themeChktoggler = document.querySelector("#toggle-dark-mode");
+
+  let theme = "light";
+
+  if (localStorage.getItem("theme")) theme = localStorage.getItem("theme");
+  else localStorage.setItem("theme", "light");
+
+  document.documentElement.dataset.mode = theme;
+  themeChktoggler.checked = theme == "dark";
+  themeChktoggler.addEventListener("change", (e) => {
+    if (e.target.checked) {
+      e.target.checked = true;
+      document.documentElement.dataset.mode = "dark";
+
+      localStorage.setItem("theme", "dark");
+    } else {
+      e.target.checked = false;
+      document.documentElement.dataset.mode = "light";
+
+      localStorage.setItem("theme", "light");
+    }
+  });
 });

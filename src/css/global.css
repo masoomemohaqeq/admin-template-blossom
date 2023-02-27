@@ -86,7 +86,7 @@ hr {
 }
 
 body * {
-  @apply transition-colors duration-[40ms];
+  /* @apply transition-colors duration-[50ms] ; */
 }
 
 /* Global classes */
