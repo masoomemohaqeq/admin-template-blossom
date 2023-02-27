@@ -7,18 +7,21 @@ module.exports = {
         first: "#A05AFF", //purple
         second: "#1BCFB4", //green
         third: "#524e83", //dark purple
+        success: "#0D9488", //dark purple
+        danger: "#B91C1C", //dark purple
+        info: "#524e83", //dark purple
         "dark-first": "#25293c", //black
         "dark-second": "#2f3349", //light black
         "supporting-first": "#4BCBEB", // blue
         "supporting-second": "#FE9496", //pink
         "supporting-third": "#9E58FF", //light purple
-        "t-extra-light": "#fff",
-        "t-light": "#47454c8f",
-        "t-mid-light": "#33303cad",
-        "t-middle": "#33303cde",
-        "t-dark": "#000",
-        "t-dark-first": "#E4E6F4DE",
-        "t-dark-second": "#E4E6F4AD",
+        "supporting-extra-light": "#fff",
+        "supporting-light": "#47454c8f",
+        "supporting-mid-light": "#33303cad",
+        "supporting-middle": "#33303cde",
+        "supporting-dark": "#000",
+        "supporting-dark-first": "#E4E6F4DE",
+        "supporting-dark-second": "#E4E6F4AD",
       },
       boxShadow: {
         custom: "0px 0px 15px -5px rgba(0,0,0,0.19)",

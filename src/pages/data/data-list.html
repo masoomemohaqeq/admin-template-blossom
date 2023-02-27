@@ -525,89 +525,191 @@
       >
         <div class="p-4 w-full h-full space-y-5">
           <div class="box">
-            <div class="p-3">
-              <h4 class="box-title">Welcome to Dashboard</h4>
-              <h6
-                class="box-desc text-supporting-light font-medium dark:text-white"
+            <div class="px-6 pt-8 pb-5">
+              <h5 class="box-title font-semibold">Data List</h5>
+            </div>
+            <div
+              class="flex px-6 py-4 items-center text-supporting-light dark:text-supporting-dark-second"
+            >
+              <a href="#" class="btn-second">Add New Product </a>
+              <span class="flex-1 text-center"
+                >Showing 1 to 10 of 150 entries</span
               >
-                You can choose options in sidebar
-              </h6>
+              <div
+                class="border rounded-md shadow-sm relative flex dark:border-none"
+              >
+                <form class="">
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    name="search-data"
+                    id="search-data"
+                    class="border-none dark:bg-dark-first"
+                  />
+                </form>
+                <i
+                  class="fa-solid fa-magnifying-glass right-2 absolute-center-y"
+                ></i>
+              </div>
             </div>
-            <div>
-              <a href="#" class="btn-first m-3">View More</a>
+            <div class="px-6 py-4">
+              <table class="data-table w-full">
+                <thead
+                  class="uppercase font-semibold text-supporting-middle dark:text-supporting-dark-second"
+                >
+                  <tr>
+                    <td>images</td>
+                    <td>product name</td>
+                    <td>Stock</td>
+                    <td>Status</td>
+                    <td>Actions</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="relative w-28 flex">
+                        <img
+                          src="/src/images/lidya-nada-tXz6g8JYYoI-unsplash.jpg"
+                          class="w-14 h-14 rounded-full object-cover border-2 border-white dark:border-supporting-light"
+                          alt=""
+                        />
+                        <img
+                          src="/src/images/pexels-dominika-roseclay-1036841.jpg"
+                          class="w-14 h-14 absolute left-6 rounded-full object-cover border-2 border-white dark:border-supporting-light"
+                          alt=""
+                        />
+                        <img
+                          src="/src/images/brooke-cagle-oTweoxMKdkA-unsplash.jpg"
+                          class="w-14 h-14 absolute left-12 rounded-full object-cover border-2 border-white dark:border-supporting-light"
+                          alt=""
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      <div>Nikon</div>
+                      <div
+                        class="text-sm text-supporting-mid-light dark:text-supporting-dark-second"
+                      >
+                        Photography
+                      </div>
+                    </td>
+                    <td>10</td>
+                    <td>
+                      <div class="text-success">
+                        <i
+                          class="fa-regular fa-square-check inline-block mx-2"
+                        ></i
+                        >Active
+                      </div>
+                    </td>
+                    <td class="space-x-2">
+                      <div class="inline-block">
+                        <a href="#">
+                          <i
+                            class="fa-regular fa-square-check inline-block mx-2"
+                          ></i
+                          >Edit
+                        </a>
+                      </div>
+                      <div class="inline-block text-danger">
+                        <a href="#">
+                          <i class="fa-solid fa-trash inline-block mx-2"></i
+                          >Delete
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="relative w-28 flex">
+                        <img
+                          src="/src/images/brooke-cagle-oTweoxMKdkA-unsplash.jpg"
+                          class="w-14 h-14 rounded-full object-cover border-2 border-white dark:border-supporting-light"
+                          alt=""
+                        />
+                        <img
+                          src="/src/images/lidya-nada-tXz6g8JYYoI-unsplash.jpg"
+                          class="w-14 h-14 absolute left-6 rounded-full object-cover border-2 border-white dark:border-supporting-light"
+                          alt=""
+                        />
+                        <img
+                          src="/src/images/antonino-visalli-RNiBLy7aHck-unsplash.jpg"
+                          class="w-14 h-14 absolute left-12 rounded-full object-cover border-2 border-white dark:border-supporting-light"
+                          alt=""
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      <div>Apple MacBook Pro 7</div>
+                      <div
+                        class="text-sm text-supporting-mid-light dark:text-supporting-dark-second"
+                      >
+                        PC & Laptop
+                      </div>
+                    </td>
+                    <td>10</td>
+                    <td>
+                      <div class="text-danger">
+                        <i
+                          class="fa-regular fa-square-check inline-block mx-2"
+                        ></i
+                        >Inactive
+                      </div>
+                    </td>
+                    <td class="space-x-2">
+                      <div class="inline-block">
+                        <a href="#">
+                          <i
+                            class="fa-regular fa-square-check inline-block mx-2"
+                          ></i
+                          >Edit
+                        </a>
+                      </div>
+                      <div class="inline-block text-danger">
+                        <a href="#">
+                          <i class="fa-solid fa-trash inline-block mx-2"></i
+                          >Delete
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-          </div>
-          <div class="box">
-            <div class="p-3">
-              <h4 class="box-title">Statistics</h4>
-            </div>
-            <div class="grid grid-cols-2 grid-rows-2 space-y-2">
-              <div class="p-2 flex items-center gap-3">
-                <div
-                  class="w-12 h-12 rounded-full bg-supporting-first/30 relative"
-                >
-                  <i
-                    class="fa-solid fa-chart-pie text-2xl text-supporting-first/80 absolute-center"
-                  ></i>
-                </div>
-                <div class="text-2xl">
-                  <span class="font-medium">285k</span>
-                  <p
-                    class="text-supporting-light text-sm dark:text-supporting-dark-second"
-                  >
-                    Sales
-                  </p>
-                </div>
-              </div>
-              <div class="p-2 flex items-center gap-3">
-                <div
-                  class="w-12 h-12 rounded-full bg-supporting-second/30 relative"
-                >
-                  <i
-                    class="fa-solid fa-cart-shopping text-2xl text-supporting-second absolute-center"
-                  ></i>
-                </div>
-                <div class="text-2xl">
-                  <span class="font-medium">1.423k</span>
-                  <p
-                    class="text-supporting-light text-sm dark:text-supporting-dark-second"
-                  >
-                    Sales
-                  </p>
-                </div>
-              </div>
-              <div class="p-2 flex items-center gap-3">
-                <div
-                  class="w-12 h-12 rounded-full bg-supporting-third/30 relative"
-                >
-                  <i
-                    class="fa-solid fa-dollar-sign text-2xl text-supporting-third absolute-center"
-                  ></i>
-                </div>
-                <div class="text-2xl">
-                  <span class="font-medium">8.549k</span>
-                  <p
-                    class="text-supporting-light text-sm dark:text-supporting-dark-second"
-                  >
-                    Sales
-                  </p>
-                </div>
-              </div>
-              <div class="p-2 flex items-center gap-3">
-                <div class="w-12 h-12 rounded-full bg-second/30 relative">
-                  <i
-                    class="fa-solid fa-person text-3xl text-second absolute-center"
-                  ></i>
-                </div>
-                <div class="text-2xl">
-                  <span class="font-medium">9745k</span>
-                  <p
-                    class="text-supporting-light text-sm dark:text-supporting-dark-second"
-                  >
-                    Sales
-                  </p>
-                </div>
-              </div>
+            <!-- Pagination -->
+            <div class="px-6 pt-4 pb-8">
+              <ul
+                class="pagination w-fit mx-auto text-center flex gap-2 text-supporting-middle text-base dark:text-supporting-dark-first"
+              >
+                <li>
+                  <a href="#"> <i class="fa-solid fa-angles-left"></i> </a>
+                </li>
+                <li>
+                  <a href="#"> <i class="fa-solid fa-angle-left"></i></a>
+                </li>
+                <li>
+                  <a href="#"> ...</a>
+                </li>
+                <li>
+                  <a href="#"> 1</a>
+                </li>
+                <li class="active">
+                  <a href="#"> 2</a>
+                </li>
+                <li>
+                  <a href="#"> 3</a>
+                </li>
+                <li>
+                  <a href="#"> ...</a>
+                </li>
+                <li>
+                  <a href="#"> <i class="fa-solid fa-angle-right"></i></a>
+                </li>
+                <li>
+                  <a href="#"> <i class="fa-solid fa-angles-right"></i> </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
