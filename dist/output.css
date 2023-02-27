@@ -1246,6 +1246,11 @@ h6 {
   padding-bottom: 1.25rem;
 }
 
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .pb-5 {
   padding-bottom: 1.25rem;
 }
@@ -1654,15 +1659,17 @@ input,
 textarea {
   border-radius: 0.375rem;
   border-width: 1px;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   outline-width: 0px;
 }
 
 .input-group label {
-  color: #47454c8f;
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgb(82 78 131 / var(--tw-text-opacity));
 }
 
 .float-input {
@@ -1877,6 +1884,74 @@ textarea {
   background-color: rgb(37 41 60 / var(--tw-bg-opacity));
 }
 
+/* Data Form */
+
+.data-form > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
+.data-form .input-group > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+}
+
+.data-form .input-group label {
+  display: block;
+}
+
+.data-form .input-group input {
+  background-color: rgb(71 69 76 / 0.05);
+  --tw-text-opacity: 1;
+  color: rgb(82 78 131 / var(--tw-text-opacity));
+}
+
+.data-form .input-group input::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(82 78 131 / var(--tw-text-opacity));
+}
+
+.data-form .input-group input::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(82 78 131 / var(--tw-text-opacity));
+}
+
+.data-form .input-group .input-w-desc {
+  display: flex;
+}
+
+.data-form .input-group .input-w-desc input {
+  flex: 1 1 0%;
+}
+
+.data-form .input-group .input-w-desc .input-desc {
+  border-width: 1px;
+  background-color: rgb(82 78 131 / 0.1);
+  padding: 1rem;
+}
+
+.input-w-desc.right input {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.data-form .input-group .input-w-desc.right .input-desc {
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+}
+
+.data-form .input-group .input-w-desc.left input {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.data-form .input-group .input-w-desc.left .input-desc {
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+}
+
 @media (min-width: 1280px) {
   .xl\:container {
     width: 100%;
@@ -1946,6 +2021,11 @@ textarea {
 
 [data-mode="dark"] .dark\:border-none {
   border-style: none;
+}
+
+[data-mode="dark"] .dark\:border-dark-second {
+  --tw-border-opacity: 1;
+  border-color: rgb(47 51 73 / var(--tw-border-opacity));
 }
 
 [data-mode="dark"] .dark\:border-supporting-light {

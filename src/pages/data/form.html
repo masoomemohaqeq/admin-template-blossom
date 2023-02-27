@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en" data-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/src/images/blossom-orange.svg"
+    />
+    <title>Blossom</title>
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    /> -->
+
+    <link rel="stylesheet" href="/src/fontawesome/css/all.min.css" />
+
+    <link rel="stylesheet" href="/dist/output.css" />
+  </head>
+  <body>
+    <div
+      class="xl:grid xl:grid-rows-1 xl:grid-cols-6 bg-third/5 dark:bg-dark-first dark:text-supporting-dark-first"
+    >
+      <nav
+        class="xl:col-start-2 xl:col-end-7 xl:row-start-1 xl:row-end-2 xl:p-4"
+      >
+        <div
+          class="flex justify-between items-center text-supporting-middle shadow-colored bg-white p-4 h-[50px] gap-3 xl:rounded-md dark:bg-dark-second dark:text-supporting-dark-first dark:shadow-md"
+        >
+          <!-- Toggle Sidebar -->
+          <div
+            class="w-11 h-11 relative border border-supporting-middle rounded-full text-center active-state-effect xl:hidden"
+          >
+            <label for="toggleSidebar" class="inline-block w-full h-full">
+              <i
+                class="fa-solid fa-bars-staggered absolute absolute-center align-middle text-2xl"
+              ></i>
+            </label>
+          </div>
+
+          <!-- Menu -->
+          <div class="flex md:flex-1 z-10">
+            <!-- Search bar -->
+            <div class="relative">
+              <label for="toggle-search-modal">
+                <div class="mx-3 space-x-2 cursor-pointer">
+                  <i class="fa-solid fa-magnifying-glass text-xl"></i>
+                  <span class="hidden md:inline-block">Search...</span>
+                </div>
+              </label>
+              <input
+                type="checkbox"
+                name="toggle-search-modal"
+                id="toggle-search-modal"
+                class="toggle-modal absolute w-0 h-0"
+              />
+              <div
+                class="modal-wrapper w-screen h-screen fixed inset-0 invisible opacity-0 transition-all"
+              >
+                <label
+                  for="toggle-search-modal"
+                  class="absolute w-full h-full bg-black/10 dark:bg-white/10"
+                ></label>
+                <div
+                  class="modal w-5/6 md:w-2/6 bg-white absolute-center scale-0 transition-all divide-y rounded-md dark:bg-dark-first dark:text-supporting-dark-second dark:divide-supporting-light"
+                >
+                  <div
+                    class="modal-header flex justify-between items-center space-x-3 p-6"
+                  >
+                    <i class="fa-solid fa-magnifying-glass text-xl"></i>
+                    <div class="flex-1">
+                      <input
+                        type="text"
+                        name="search-panel"
+                        id="search-panel"
+                        class="border-none w-full text-lg dark:bg-dark-first"
+                        placeholder="type here..."
+                        autofocus
+                      />
+                    </div>
+                    <label
+                      for="toggle-search-modal"
+                      class="hover:bg-black/5 w-10 h-10 cursor-pointer rounded-md flex justify-center items-center transition-all"
+                    >
+                      <i class="fa-solid fa-xmark text-xl"></i>
+                    </label>
+                  </div>
+                  <div class="modal-body p-6">
+                    <div class="search-box">
+                      <div
+                        class="uppercase text-supporting-light py-3 dark:text-supporting-dark-first"
+                      >
+                        Popular Searches
+                      </div>
+                      <ul>
+                        <li>
+                          <a
+                            href="#"
+                            class="inline-block w-full py-3 space-x-2 hover:text-first"
+                          >
+                            <i class="fa-solid fa-headset"></i> <span>CRM</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            class="inline-block w-full py-3 space-x-2 hover:text-first"
+                          >
+                            <i class="fa-regular fa-user"></i>
+                            <span>User Profile</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            class="inline-block w-full py-3 space-x-2 hover:text-first"
+                          >
+                            <i class="fa-regular fa-calendar"></i>
+                            <span>Calendar</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="search-box">
+                      <div
+                        class="uppercase text-supporting-light py-3 dark:text-supporting-dark-first"
+                      >
+                        Pages
+                      </div>
+                      <ul>
+                        <li>
+                          <a
+                            href="#"
+                            class="inline-block w-full py-3 space-x-2 hover:text-first"
+                          >
+                            <i class="fa-regular fa-calendar"></i>
+                            <span>Calendar</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            class="inline-block w-full py-3 space-x-2 hover:text-first"
+                          >
+                            <i class="fa-regular fa-dollar-sign"></i>
+                            <span>Pricing</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            class="inline-block w-full py-3 space-x-2 hover:text-first"
+                          >
+                            <i class="fa-regular fa-user"></i>
+                            <span>User Profile</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Notif & Mode -->
+            <div class="space-x-5 mx-3 md:mr-0 md:ml-auto">
+              <div class="floating-menu-container relative inline-block">
+                <a href="#" class="toggle-floating-btn cursor-pointer">
+                  <i class="fa-regular fa-bell text-2xl relative">
+                    <span
+                      class="animate-ping absolute top-1 right-0 h-2 w-2 rounded-full bg-red-500 opacity-75"
+                    ></span>
+                    <span
+                      class="absolute top-1 right-0 rounded-full h-2 w-2 bg-red-500"
+                    ></span>
+                  </i>
+                </a>
+
+                <input
+                  type="checkbox"
+                  name="toggle-notif"
+                  id="toggle-notif"
+                  class="toggle-floating-menu absolute w-0 h-0 opacity-0"
+                />
+                <!-- Notif Menu -->
+                <div
+                  class="floating-menu absolute origin-top-right w-96 bg-white rounded-lg top-full mt-7 right-0 shadow-custom text-lg text-supporting-middle transition-all duration-500 opacity-0 scale-0 z-20 dark:bg-dark-first dark:text-supporting-dark-first"
+                >
+                  <div class="flex justify-between items-center px-6 py-5">
+                    <div>Notifications</div>
+                    <span class="badge-primary">5 New</span>
+                  </div>
+                  <hr />
+                  <ul
+                    class="divide-y dark:divide-y-0 dark:divide-supporting-dark-second"
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center w-full space-x-2 px-6 py-5 transition hover:bg-third/5 rounded-md"
+                      >
+                        <img
+                          src="/src/images/profiles/julian-wan-WNoLnJo7tS8-unsplash.jpg"
+                          class="w-12 h-12 rounded-md object-cover"
+                          alt=""
+                        />
+                        <div class="flex-1">
+                          <h6>Congratulation!</h6>
+                          <p
+                            class="text-supporting-mid-light text-base dark:text-supporting-dark-second"
+                          >
+                            You got a new badge
+                          </p>
+                        </div>
+                        <span
+                          class="text-supporting-mid-light text-base dark:text-supporting-dark-second"
+                          >Today</span
+                        >
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center w-full space-x-2 px-6 py-5 transition hover:bg-third/5 rounded-md"
+                      >
+                        <div class="w-12 h-12 rounded-md bg-first/20 relative">
+                          <i
+                            class="fa-solid fa-user-plus text-2xl text-first absolute-center"
+                          ></i>
+                        </div>
+                        <div class="flex-1">
+                          <h6>New user registered.</h6>
+                          <p
+                            class="text-supporting-mid-light text-base dark:text-supporting-dark-second"
+                          >
+                            5 hours ago
+                          </p>
+                        </div>
+                        <span
+                          class="text-supporting-mid-light text-base dark:text-supporting-dark-second"
+                          >Yesterday</span
+                        >
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center w-full space-x-2 px-6 py-5 transition hover:bg-third/5 rounded-md"
+                      >
+                        <img
+                          src="/src/images/profiles/christopher-campbell-rDEOVtE7vOs-unsplash.jpg"
+                          class="w-12 h-12 rounded-md object-cover"
+                          alt=""
+                        />
+                        <div class="flex-1">
+                          <h6>New message received.</h6>
+                          <p
+                            class="text-supporting-mid-light text-base dark:text-supporting-dark-second"
+                          >
+                            You have unread messages
+                          </p>
+                        </div>
+                        <span
+                          class="text-supporting-mid-light text-base dark:text-supporting-dark-second"
+                          >11 Aug</span
+                        >
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center w-full space-x-2 px-6 py-5 transition hover:bg-third/5 rounded-md"
+                      >
+                        <img
+                          src="/src/images/profiles/aiony-haust-3TLl_97HNJo-unsplash.jpg"
+                          class="w-12 h-12 rounded-md object-cover"
+                          alt=""
+                        />
+                        <div class="flex-1">
+                          <h6>New message received.</h6>
+                          <p
+                            class="text-supporting-mid-light text-base dark:text-supporting-dark-second"
+                          >
+                            You have unread messages
+                          </p>
+                        </div>
+                        <span
+                          class="text-supporting-mid-light text-base dark:text-supporting-dark-second"
+                          >10 Aug</span
+                        >
+                      </a>
+                    </li>
+                  </ul>
+                  <hr />
+                  <div class="px-6 py-5 hover:bg-third/5 rounded-md">
+                    <a href="#" class="btn-first uppercase w-full"
+                      >read all notifications</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!--  Mode -->
+              <div class="toggle-dark-mode-wrapper inline-block relative">
+                <input
+                  type="checkbox"
+                  name="toggle-dark-mode"
+                  id="toggle-dark-mode"
+                  class="toggle-dark-mode absolute w-0 h-0"
+                />
+                <label for="toggle-dark-mode" class="cursor-pointer">
+                  <i
+                    class="fa-regular fa-moon text-2xl scale-100 transition-all"
+                  ></i>
+                  <i
+                    class="fa-regular fa-sun text-2xl scale-0 transition-all absolute inset-0"
+                  ></i>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile -->
+          <div class="floating-menu-container relative">
+            <div
+              class="toggle-floating-btn flex items-center gap-3 cursor-pointer"
+            >
+              <div class="w-12 h-12">
+                <img
+                  src="/src/images/profiles/julian-wan-WNoLnJo7tS8-unsplash.jpg"
+                  alt="christopher"
+                  class="rounded-lg"
+                />
+              </div>
+              <div
+                class="text-supporting-middle hidden md:inline-block dark:text-supporting-dark-first"
+              >
+                John Black
+                <p class="text-sm">Frontend developer</p>
+              </div>
+            </div>
+
+            <input
+              type="checkbox"
+              name="toggle-profile"
+              id="toggle-profile"
+              class="toggle-floating-menu absolute w-0 h-0 opacity-0"
+            />
+            <!-- Profile Menu -->
+            <div
+              class="floating-menu absolute scale-0 origin-top-right w-72 bg-white rounded-lg top-full mt-5 right-0 shadow-md text-lg text-supporting-mid-light transition-all duration-500 opacity-0 z-20 dark:bg-dark-first dark:text-supporting-dark-first"
+            >
+              <div class="flex items-center p-6 gap-2">
+                <div class="w-14 h-14">
+                  <img
+                    src="/src/images/profiles/julian-wan-WNoLnJo7tS8-unsplash.jpg"
+                    alt="christopher"
+                    class="rounded-lg"
+                  />
+                </div>
+                <div
+                  class="text-black font-bold dark:text-supporting-dark-first"
+                >
+                  John Black
+                  <p class="text-sm">Frontend developer</p>
+                </div>
+              </div>
+              <hr />
+              <ul class="p-4 space-y-2">
+                <li>
+                  <a
+                    href="#"
+                    class="inline-block w-full space-x-2 p-2 transition hover:bg-third/10 rounded-md"
+                  >
+                    <i class="fa-regular fa-user"></i>
+                    <span>Profile</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-block w-full space-x-2 p-2 transition hover:bg-third/10 rounded-md"
+                  >
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                  </a>
+                </li>
+              </ul>
+              <hr />
+              <ul class="p-4 space-y-2">
+                <li>
+                  <a
+                    href="# "
+                    class="inline-block w-full space-x-2 p-2 transition hover:bg-third/10 rounded-md"
+                  >
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Sign Out</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Sidebar -->
+      <aside class="xl:col-start-1 xl:col-end-2">
+        <input
+          type="checkbox"
+          class="toggleSidebar absolute w-0 h-0 opacity-0"
+          name="toggleSidebar"
+          id="toggleSidebar"
+        />
+        <div
+          class="invisible opacity-0 dash-sidebar h-full bg-black/70 fixed inset-0 transition-all duration-200 z-20 xl:relative xl:visible xl:opacity-100 xl:z-0"
+        >
+          <div
+            class="bg-third text-white w-5/6 p-4 h-screen dash-sidebar-menu -translate-x-96 transition-all max-w-sm xl:max-w-none xl:translate-x-0 xl:w-full dark:bg-dark-second dark:text-supporting-dark-first"
+          >
+            <div class="flex justify-between items-center">
+              <div class="flex items-center space-x-2">
+                <img
+                  src="/src/images/blossom-light.svg"
+                  alt="blossom"
+                  class="w-8"
+                />
+                <div class="text-xl font-semibold">Blossom</div>
+              </div>
+
+              <label for="toggleSidebar" class="cursor-pointer xl:hidden">
+                <i class="fa-regular fa-circle-xmark text-white/70 text-xl"></i>
+              </label>
+            </div>
+            <nav>
+              <div class="p-2">
+                <div class="uppercase opacity-80 text-sm p-4">Start menu</div>
+                <ul class="space-y-2">
+                  <li>
+                    <label
+                      class="p-4 w-full rounded-xl flex justify-between items-center current"
+                    >
+                      <a href="#">
+                        <div class="space-x-2">
+                          <i class="fa-solid fa-house text-lg"></i>
+                          <span> Dashboard </span>
+                        </div>
+                      </a>
+                    </label>
+                  </li>
+                  <li>
+                    <input
+                      type="checkbox"
+                      class="absolute opacity-0"
+                      name="crud"
+                      id="crud"
+                    />
+                    <label
+                      for="crud"
+                      class="p-4 w-full rounded-xl flex justify-between items-center"
+                    >
+                      <div class="space-x-2">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                        <span> Crud </span>
+                      </div>
+                      <i
+                        class="fa-solid fa-chevron-down text-sm transition-all"
+                      ></i>
+                    </label>
+                    <ul
+                      class="sub-menu rounded-xl overflow-hidden max-h-0 transition-all duration-300"
+                    >
+                      <li>
+                        <label
+                          class="p-4 w-full flex justify-between items-center"
+                        >
+                          <a href="./data/data-list.html">
+                            <div class="space-x-2">
+                              <i class="fa-solid fa-list"></i>
+                              <span> Data List </span>
+                            </div>
+                          </a>
+                        </label>
+                      </li>
+                      <li>
+                        <label
+                          class="p-4 w-full flex justify-between items-center"
+                        >
+                          <a href="./data/form.html">
+                            <div class="space-x-2">
+                              <i class="fa-regular fa-file"></i>
+                              <span> Form </span>
+                            </div>
+                          </a>
+                        </label>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <label
+                      class="p-4 w-full rounded-xl flex justify-between items-center"
+                    >
+                      <a href="./account/profile.html">
+                        <div class="space-x-2">
+                          <i class="fa-regular fa-user"></i>
+                          <span> Profile </span>
+                        </div>
+                      </a>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <main
+        class="xl:col-start-2 xl:col-end-7 xl:row-start-1 xl:mt-[62px] xl:container xl:mx-auto min-h-screen"
+      >
+        <div class="p-4 w-full h-full space-y-5">
+          <div class="box">
+            <div class="px-6 pt-8 pb-5">
+              <h5 class="box-title font-semibold">Form</h5>
+            </div>
+            <div
+              class="px-6 py-8 border rounded-md shadow-sm dark:bg-dark-first dark:text-supporting-dark-first dark:border-dark-second"
+            >
+              <form class="data-form">
+                <div class="input-group">
+                  <label for="product-name">Product Name</label>
+
+                  <input
+                    type="text"
+                    name="product-name"
+                    id="product-name"
+                    class="w-full"
+                    placeholder="Email"
+                  />
+                </div>
+                <div class="input-group">
+                  <label for="quantity">Quantity</label>
+                  <div class="input-w-desc right">
+                    <input
+                      type="number"
+                      name="quantity"
+                      id="quantity"
+                      class="w-full"
+                      placeholder="Quantity"
+                    />
+                    <div class="input-desc">pcs</div>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="price">Price</label>
+                  <div class="input-w-desc left">
+                    <div class="input-desc">Unit</div>
+
+                    <input
+                      type="number"
+                      name="price"
+                      id="price"
+                      class="w-full"
+                      placeholder="Price"
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="/src/js/global.js"></script>
+  </body>
+</html>

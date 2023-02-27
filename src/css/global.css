@@ -148,11 +148,11 @@ hr {
 
 input,
 textarea {
-  @apply border rounded-md py-2 px-3 outline-0;
+  @apply border rounded-md py-3 px-4 outline-0;
 }
 
 .input-group label {
-  @apply text-supporting-light;
+  @apply text-third font-semibold;
 }
 
 .float-input {
@@ -265,4 +265,53 @@ textarea {
 
 .pagination .active {
   @apply border border-supporting-mid-light/10 shadow-sm dark:bg-dark-first;
+}
+
+/* Data Form */
+.data-form {
+  @apply space-y-4;
+}
+
+.data-form .input-group {
+  @apply space-y-3;
+}
+
+.data-form .input-group label {
+  @apply block;
+}
+
+.data-form .input-group input {
+  @apply bg-supporting-light/5 text-third;
+}
+
+.data-form .input-group input::placeholder {
+  @apply text-third;
+}
+
+.data-form .input-group .input-w-desc {
+  @apply flex;
+}
+
+.data-form .input-group .input-w-desc input {
+  @apply flex-1;
+}
+
+.data-form .input-group .input-w-desc .input-desc {
+  @apply bg-third/10  p-4 border;
+}
+
+.input-w-desc.right input {
+  @apply rounded-r-none;
+}
+
+.data-form .input-group .input-w-desc.right .input-desc {
+  @apply rounded-r-md;
+}
+
+.data-form .input-group .input-w-desc.left input {
+  @apply rounded-l-none;
+}
+
+.data-form .input-group .input-w-desc.left .input-desc {
+  @apply rounded-l-md;
 }
