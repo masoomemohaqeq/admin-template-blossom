@@ -144,39 +144,6 @@ hr {
   @apply scale-100;
 }
 
-/* Forms */
-
-input,
-textarea {
-  @apply border rounded-md py-3 px-4 outline-0;
-}
-
-.input-group label {
-  @apply text-third font-semibold;
-}
-
-.float-input {
-  @apply relative;
-}
-
-.float-input input::placeholder {
-  @apply opacity-0;
-}
-
-.float-input .float-label {
-  @apply transition-all absolute-center-y left-3;
-}
-
-.float-input input:focus,
-.float-input input:not(:placeholder-shown) {
-  @apply border-first;
-}
-
-.float-input input:focus + .float-label,
-.float-input input:not(:placeholder-shown) + .float-label {
-  @apply text-xs top-0 bg-white px-1 text-first;
-}
-
 /* Dashboard Sidebar */
 
 .toggleSidebar:checked + .dash-sidebar {
@@ -267,25 +234,72 @@ textarea {
   @apply border border-supporting-mid-light/10 shadow-sm dark:bg-dark-first;
 }
 
+/* Forms */
+
+input,
+textarea {
+  @apply border rounded-md py-3 px-4 outline-0;
+}
+
+.float-input {
+  @apply relative;
+}
+
+.float-input input::placeholder {
+  @apply opacity-0;
+}
+
+.float-input .float-label {
+  @apply transition-all absolute-center-y left-3;
+}
+
+.float-input input:focus,
+.float-input input:not(:placeholder-shown) {
+  @apply border-first;
+}
+
+.float-input input:focus + .float-label,
+.float-input input:not(:placeholder-shown) + .float-label {
+  @apply text-xs top-0 bg-white px-1 text-first;
+}
+
 /* Data Form */
 .data-form {
   @apply space-y-4;
 }
 
-.data-form .input-group {
+.data-form .input-group,
+.data-form .editor-input-group,
+.data-form .switch-input-group {
   @apply space-y-3;
 }
 
-.data-form .input-group label {
+.data-form .input-group label,
+.data-form .editor-input-group:first-child,
+.data-form .switch-input-group [for] {
+  @apply text-third font-semibold  dark:text-supporting-dark-second;
+}
+.data-form .input-group label,
+.data-form .switch-input-group [for] {
   @apply block;
 }
+.data-form .input-group input,
+.ck-editor__editable[role="textbox"],
+.data-form .input-group .ts-control {
+  @apply text-third border-third/20 dark:bg-dark-second dark:border-dark-second dark:text-supporting-dark-second dark:border-0;
+}
 
-.data-form .input-group input {
-  @apply bg-supporting-light/5 text-third;
+.ts-wrapper.multi .ts-control > div {
+  @apply text-base text-third dark:bg-supporting-dark-first;
+}
+
+.ts-dropdown-content,
+.ts-control > * {
+  @apply text-base;
 }
 
 .data-form .input-group input::placeholder {
-  @apply text-third;
+  @apply text-third text-base dark:text-supporting-dark-second;
 }
 
 .data-form .input-group .input-w-desc {
@@ -297,7 +311,7 @@ textarea {
 }
 
 .data-form .input-group .input-w-desc .input-desc {
-  @apply bg-third/10  p-4 border;
+  @apply bg-black/5 text-third  p-4 border dark:border-0 dark:bg-supporting-dark-first/20 dark:text-supporting-dark-first;
 }
 
 .input-w-desc.right input {
@@ -314,4 +328,131 @@ textarea {
 
 .data-form .input-group .input-w-desc.left .input-desc {
   @apply rounded-l-md;
+}
+
+/* Ckeditor */
+.ck-editor__editable[role="textbox"] {
+  min-height: 300px;
+}
+
+.ck-rounded-corners .ck.ck-editor__top .ck-sticky-panel .ck-toolbar {
+  @apply dark:bg-supporting-dark-first;
+}
+
+.ck-content ol {
+  display: block;
+  list-style-type: decimal;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+}
+
+.ck-content li {
+  display: list-item;
+}
+.ck-content p {
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ck-content ul {
+  display: block;
+  list-style-type: disc;
+  margin-top: 1em;
+  margin-bottom: 1 em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+}
+
+.ck-content a:link {
+  color: (internal value);
+  text-decoration: underline;
+  cursor: auto;
+}
+
+.ck-content a {
+  cursor: pointer;
+}
+
+.ck-content a:visited {
+  color: (internal value);
+  text-decoration: underline;
+  cursor: auto;
+}
+
+.ck-content a:link:active {
+  color: (internal value);
+}
+
+.ck-content a:visited:active {
+  color: (internal value);
+}
+
+.ck-content img {
+  display: inline-block;
+}
+/* Switch Btn */
+.switch-input-group .switch {
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 22px;
+}
+
+.switch-input-group .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-input-group .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.switch-input-group .slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+
+  @apply dark:bg-dark-second;
+}
+
+.switch-input-group input:checked + .slider {
+  @apply bg-first dark:bg-supporting-dark-first;
+}
+
+.switch-input-group input:focus + .slider {
+  @apply shadow-colored;
+}
+
+.switch-input-group input:checked + .slider:before {
+  -webkit-transform: translateX(11px);
+  -ms-transform: translateX(11px);
+  transform: translateX(11px);
+}
+
+.switch-input-group .slider.round {
+  border-radius: 34px;
+}
+
+.switch-input-group .slider.round:before {
+  border-radius: 50%;
 }

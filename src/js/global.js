@@ -22,6 +22,7 @@ document.body.addEventListener("click", function (event) {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Toggle dark mode
   themeChktoggler = document.querySelector("#toggle-dark-mode");
 
   let theme = "light";
@@ -43,5 +44,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
       localStorage.setItem("theme", "light");
     }
+  });
+
+  // Form select
+  new TomSelect("#product-tags", {
+    plugins: {
+      remove_button: {
+        title: "Remove this item",
+      },
+    },
+    persist: false,
+    createOnBlur: true,
+    create: true,
+    onDelete: function (values) {
+      return confirm(
+        values.length > 1
+          ? "Are you sure you want to remove these " + values.length + " items?"
+          : 'Are you sure you want to remove "' + values[0] + '"?'
+      );
+    },
+  });
+  new TomSelect("#category", {
+    create: true,
+    sortField: {
+      field: "text",
+      direction: "asc",
+    },
+  });
+
+  // Form Ckeditor
+  ClassicEditor.create(document.querySelector("#editor")).catch((error) => {
+    console.error(error);
   });
 });

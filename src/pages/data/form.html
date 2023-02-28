@@ -19,6 +19,7 @@
     /> -->
 
     <link rel="stylesheet" href="/src/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/src/plugins/tom-select/tom-select.min.css" />
 
     <link rel="stylesheet" href="/dist/output.css" />
   </head>
@@ -544,6 +545,18 @@
                   />
                 </div>
                 <div class="input-group">
+                  <label for="category">Category</label>
+
+                  <select
+                    id="category"
+                    placeholder="Select a cateogry..."
+                    autocomplete="off"
+                  >
+                    <option value="">Select a cateogry...</option>
+                    <option value="4">PC & Laptop</option>
+                  </select>
+                </div>
+                <div class="input-group">
                   <label for="quantity">Quantity</label>
                   <div class="input-w-desc right">
                     <input
@@ -570,6 +583,42 @@
                     />
                   </div>
                 </div>
+                <div class="input-group">
+                  <label
+                    for="product-tags
+                  "
+                    >Tags</label
+                  >
+                  <input
+                    id="product-tags"
+                    value="awesome,neat"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="input-group">
+                  <label
+                    for="date
+                  "
+                    >Create Date</label
+                  >
+                  <input id="date" type="date" class="w-full" />
+                </div>
+                <div class="switch-input-group">
+                  <label for="isActive">Active Status</label>
+                  <label class="switch">
+                    <input
+                      type="checkbox"
+                      name="isActive"
+                      id="isActive"
+                      checked
+                    />
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="editor-input-group">
+                  <label>Description</label>
+                  <div id="editor"></div>
+                </div>
               </form>
             </div>
           </div>
@@ -577,6 +626,8 @@
       </main>
     </div>
 
+    <script src="/src/plugins/tom-select/tom-select.complete.js"></script>
+    <script src="/src/plugins/ckeditor/ckeditor.min.js"></script>
     <script src="/src/js/global.js"></script>
   </body>
 </html>
