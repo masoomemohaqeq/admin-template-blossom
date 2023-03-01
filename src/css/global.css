@@ -475,18 +475,6 @@ textarea,
 }
 
 /* Form Validation */
-/* 
-.data-form .input-group.has-success input,
-.data-form .input-group.has-success select,
-.data-form .input-group.has-success textarea {
-  @apply border-b-2  border-b-success
-}
-
-.data-form .input-group.has-danger input,
-.data-form .input-group.has-danger select,
-.data-form .input-group.has-danger textarea {
-  @apply border-b-2 border-b-danger;
-} */
 
 .input-group .text-help {
   color: #dc1d34;

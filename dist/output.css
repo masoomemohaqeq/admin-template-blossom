@@ -917,6 +917,10 @@ h6 {
   height: 100vh;
 }
 
+.h-20 {
+  height: 5rem;
+}
+
 .max-h-0 {
   max-height: 0px;
 }
@@ -996,6 +1000,10 @@ h6 {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-20 {
+  width: 5rem;
 }
 
 .max-w-6xl {
@@ -1101,12 +1109,16 @@ h6 {
   grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
 .flex-col {
   flex-direction: column;
 }
 
-.items-start {
-  align-items: flex-start;
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .items-center {
@@ -1117,20 +1129,12 @@ h6 {
   align-items: stretch;
 }
 
-.justify-start {
-  justify-content: flex-start;
-}
-
 .justify-center {
   justify-content: center;
 }
 
 .justify-between {
   justify-content: space-between;
-}
-
-.justify-items-stretch {
-  justify-items: stretch;
 }
 
 .gap-2 {
@@ -1181,6 +1185,24 @@ h6 {
   margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
 }
 
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
+.space-y-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+}
+
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .divide-y > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
@@ -1193,10 +1215,6 @@ h6 {
 
 .overflow-hidden {
   overflow: hidden;
-}
-
-.overflow-x-scroll {
-  overflow-x: scroll;
 }
 
 .rounded {
@@ -1310,6 +1328,19 @@ h6 {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-supporting-light {
+  background-color: #47454c8f;
+}
+
+.bg-blue-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 64 175 / var(--tw-bg-opacity));
+}
+
+.bg-third\/20 {
+  background-color: rgb(82 78 131 / 0.2);
 }
 
 .object-cover {
@@ -1540,6 +1571,29 @@ h6 {
 
 .text-white\/70 {
   color: rgb(255 255 255 / 0.7);
+}
+
+.text-supporting-extra-light {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-supporting-light\/40 {
+  color: rgb(71 69 76 / 0.4);
+}
+
+.text-supporting-light\/50 {
+  color: rgb(71 69 76 / 0.5);
+}
+
+.text-blue-700 {
+  --tw-text-opacity: 1;
+  color: rgb(29 78 216 / var(--tw-text-opacity));
+}
+
+.text-third {
+  --tw-text-opacity: 1;
+  color: rgb(82 78 131 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -2338,19 +2392,6 @@ textarea,
 
 /* Form Validation */
 
-/* 
-.data-form .input-group.has-success input,
-.data-form .input-group.has-success select,
-.data-form .input-group.has-success textarea {
-  @apply border-b-2  border-b-success
-}
-
-.data-form .input-group.has-danger input,
-.data-form .input-group.has-danger select,
-.data-form .input-group.has-danger textarea {
-  @apply border-b-2 border-b-danger;
-} */
-
 .input-group .text-help {
   color: #dc1d34;
 }
@@ -2397,11 +2438,6 @@ textarea,
       max-width: 1536px;
     }
   }
-}
-
-.before\:content-\[attr\(data-content\)\]::before {
-  --tw-content: attr(data-content);
-  content: var(--tw-content);
 }
 
 .hover\:bg-black\/5:hover {
@@ -2541,10 +2577,6 @@ textarea,
     width: fit-content;
   }
 
-  .md\:w-full {
-    width: 100%;
-  }
-
   .md\:flex-1 {
     flex: 1 1 0%;
   }
@@ -2561,8 +2593,14 @@ textarea,
     justify-content: center;
   }
 
-  .md\:gap-0 {
-    gap: 0px;
+  .md\:gap-6 {
+    gap: 1.5rem;
+  }
+
+  .md\:space-x-2 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .md\:space-x-3 > :not([hidden]) ~ :not([hidden]) {
@@ -2577,16 +2615,16 @@ textarea,
     margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
-  .md\:space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  .md\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
-    margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
   }
 
-  .md\:space-x-2 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(0.5rem * var(--tw-space-x-reverse));
-    margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+  .md\:space-y-1 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
   }
 }
 
