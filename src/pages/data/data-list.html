@@ -442,9 +442,9 @@
                 <ul class="space-y-2">
                   <li>
                     <label
-                      class="p-4 w-full rounded-xl flex justify-between items-center current"
+                      class="p-4 w-full rounded-xl flex justify-between items-center"
                     >
-                      <a href="#">
+                      <a href="../index.html">
                         <div class="space-x-2">
                           <i class="fa-solid fa-house text-lg"></i>
                           <span> Dashboard </span>
@@ -476,9 +476,9 @@
                     >
                       <li>
                         <label
-                          class="p-4 w-full flex justify-between items-center"
+                          class="p-4 w-full flex justify-between items-center current"
                         >
-                          <a href="./data/data-list.html">
+                          <a href="./data-list.html">
                             <div class="space-x-2">
                               <i class="fa-solid fa-list"></i>
                               <span> Data List </span>
@@ -490,7 +490,7 @@
                         <label
                           class="p-4 w-full flex justify-between items-center"
                         >
-                          <a href="./data/form.html">
+                          <a href="./form.html">
                             <div class="space-x-2">
                               <i class="fa-regular fa-file"></i>
                               <span> Form </span>
@@ -504,10 +504,22 @@
                     <label
                       class="p-4 w-full rounded-xl flex justify-between items-center"
                     >
-                      <a href="./account/profile.html">
+                      <a href="../account/profile.html">
                         <div class="space-x-2">
                           <i class="fa-regular fa-user"></i>
                           <span> Profile </span>
+                        </div>
+                      </a>
+                    </label>
+                  </li>
+                  <li>
+                    <label
+                      class="p-4 w-full rounded-xl flex justify-between items-center"
+                    >
+                      <a href="../logins/loginV1.html">
+                        <div class="space-x-2">
+                          <i class="fa-solid fa-right-to-bracket"></i>
+                          <span> Login </span>
                         </div>
                       </a>
                     </label>
@@ -529,10 +541,10 @@
               <h5 class="box-title font-semibold">Data List</h5>
             </div>
             <div
-              class="flex px-6 py-4 items-center text-supporting-light dark:text-supporting-dark-second"
+              class="flex flex-col items-stretch gap-4 md:flex-row px-6 py-4 md:items-center text-supporting-light dark:text-supporting-dark-second"
             >
               <a href="./form.html" class="btn-second">Add New Product </a>
-              <span class="flex-1 text-center"
+              <span class="hidden md:block flex-1 text-center"
                 >Showing 1 to 10 of 150 entries</span
               >
               <div
@@ -552,7 +564,7 @@
                 ></i>
               </div>
             </div>
-            <div class="px-6 py-4">
+            <div class="px-6 py-4 overflow-auto lg:overflow-visible">
               <table class="data-table w-full">
                 <thead
                   class="uppercase font-semibold text-supporting-middle dark:text-supporting-dark-second"
@@ -603,7 +615,7 @@
                         >Active
                       </div>
                     </td>
-                    <td class="space-x-2">
+                    <td class="md:space-x-2">
                       <div class="inline-block">
                         <a href="./form.html">
                           <i
@@ -657,7 +669,7 @@
                         >Inactive
                       </div>
                     </td>
-                    <td class="space-x-2">
+                    <td class="md:space-x-2">
                       <div class="inline-block">
                         <a href="./form.html">
                           <i
