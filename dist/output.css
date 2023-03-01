@@ -691,11 +691,19 @@ h6 {
   position: relative;
 }
 
+.sticky {
+  position: sticky;
+}
+
 .inset-0 {
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
+}
+
+.-bottom-4 {
+  bottom: -1rem;
 }
 
 .-bottom-8 {
@@ -704,6 +712,10 @@ h6 {
 
 .-left-9 {
   left: -2.25rem;
+}
+
+.-right-4 {
+  right: -1rem;
 }
 
 .-right-8 {
@@ -716,6 +728,10 @@ h6 {
 
 .-top-20 {
   top: -5rem;
+}
+
+.-top-4 {
+  top: -1rem;
 }
 
 .-top-\[10px\] {
@@ -880,6 +896,10 @@ h6 {
   height: 12rem;
 }
 
+.h-9 {
+  height: 2.25rem;
+}
+
 .h-\[50px\] {
   height: 50px;
 }
@@ -937,6 +957,10 @@ h6 {
   width: 9rem;
 }
 
+.w-44 {
+  width: 11rem;
+}
+
 .w-48 {
   width: 12rem;
 }
@@ -951,6 +975,10 @@ h6 {
 
 .w-8 {
   width: 2rem;
+}
+
+.w-9 {
+  width: 2.25rem;
 }
 
 .w-96 {
@@ -968,6 +996,10 @@ h6 {
 
 .w-screen {
   width: 100vw;
+}
+
+.max-w-6xl {
+  max-width: 72rem;
 }
 
 .max-w-sm {
@@ -1213,6 +1245,11 @@ h6 {
   background-color: rgb(27 207 180 / 0.3);
 }
 
+.bg-supporting-extra-light {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .bg-supporting-first\/30 {
   background-color: rgb(75 203 235 / 0.3);
 }
@@ -1246,6 +1283,10 @@ h6 {
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.p-1 {
+  padding: 0.25rem;
 }
 
 .p-2 {
@@ -1518,6 +1559,12 @@ h6 {
 .shadow-sm {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-spread {
+  --tw-shadow: 0px 0px 39px 7px rgba(0,0,0,0.10);
+  --tw-shadow-colored: 0px 0px 39px 7px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -1884,7 +1931,8 @@ h6 {
 /* Forms */
 
 input,
-textarea {
+textarea,
+.dropzone {
   border-radius: 0.375rem;
   border-width: 1px;
   padding-top: 0.75rem;
@@ -1970,7 +2018,7 @@ textarea {
 }
 
 .data-form .input-group label,
-.data-form .editor-input-group:first-child,
+.data-form .editor-input-group label,
 .data-form .switch-input-group [for] {
   font-weight: 600;
   --tw-text-opacity: 1;
@@ -1978,7 +2026,7 @@ textarea {
 }
 
 [data-mode="dark"] .data-form .input-group label,[data-mode="dark"] 
-.data-form .editor-input-group:first-child,[data-mode="dark"] 
+.data-form .editor-input-group label,[data-mode="dark"] 
 .data-form .switch-input-group [for] {
   color: #E4E6F4AD;
 }
@@ -1989,6 +2037,8 @@ textarea {
 }
 
 .data-form .input-group input,
+.data-form .input-group textarea,
+.dropzone,
 .ck-editor__editable[role="textbox"],
 .data-form .input-group .ts-control {
   border-color: rgb(82 78 131 / 0.2);
@@ -1997,6 +2047,8 @@ textarea {
 }
 
 [data-mode="dark"] .data-form .input-group input,[data-mode="dark"] 
+.data-form .input-group textarea,[data-mode="dark"] 
+.dropzone,[data-mode="dark"] 
 .ck-editor__editable[role="textbox"],[data-mode="dark"] 
 .data-form .input-group .ts-control {
   border-width: 0px;
@@ -2092,6 +2144,12 @@ textarea {
 
 .ck-editor__editable[role="textbox"] {
   min-height: 300px;
+}
+
+[data-mode="dark"] .ck-editor__editable[role="textbox"] {
+  background-color: #E4E6F4AD;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 [data-mode="dark"] .ck-rounded-corners .ck.ck-editor__top .ck-sticky-panel .ck-toolbar {
@@ -2225,6 +2283,54 @@ textarea {
   border-radius: 50%;
 }
 
+/* Dropzone */
+
+.dropzone {
+  border-width: 2px;
+  border-style: dashed;
+}
+
+[data-mode="dark"] .dropzone {
+  background-color: #E4E6F4AD;
+  --tw-text-opacity: 1;
+  color: rgb(47 51 73 / var(--tw-text-opacity));
+}
+
+.dropzone .dz-message {
+  margin-top: 4rem;
+}
+
+.dropzone .dz-preview.dz-image-preview {
+  background-color: transparent;
+}
+
+/* Form Validation */
+
+/* 
+.data-form .input-group.has-success input,
+.data-form .input-group.has-success select,
+.data-form .input-group.has-success textarea {
+  @apply border-b-2  border-b-success
+}
+
+.data-form .input-group.has-danger input,
+.data-form .input-group.has-danger select,
+.data-form .input-group.has-danger textarea {
+  @apply border-b-2 border-b-danger;
+} */
+
+.input-group .text-help {
+  color: #dc1d34;
+}
+
+.inline-label label {
+  display: inline;
+}
+
+.pristine-error {
+  display: table;
+}
+
 @media (min-width: 1280px) {
   .xl\:container {
     width: 100%;
@@ -2313,6 +2419,10 @@ textarea {
 [data-mode="dark"] .dark\:bg-dark-second {
   --tw-bg-opacity: 1;
   background-color: rgb(47 51 73 / var(--tw-bg-opacity));
+}
+
+[data-mode="dark"] .dark\:bg-supporting-dark-second {
+  background-color: #E4E6F4AD;
 }
 
 [data-mode="dark"] .dark\:bg-white\/10 {

@@ -237,7 +237,8 @@ hr {
 /* Forms */
 
 input,
-textarea {
+textarea,
+.dropzone {
   @apply border rounded-md py-3 px-4 outline-0;
 }
 
@@ -264,6 +265,7 @@ textarea {
 }
 
 /* Data Form */
+
 .data-form {
   @apply space-y-4;
 }
@@ -275,7 +277,7 @@ textarea {
 }
 
 .data-form .input-group label,
-.data-form .editor-input-group:first-child,
+.data-form .editor-input-group label,
 .data-form .switch-input-group [for] {
   @apply text-third font-semibold  dark:text-supporting-dark-second;
 }
@@ -284,6 +286,8 @@ textarea {
   @apply block;
 }
 .data-form .input-group input,
+.data-form .input-group textarea,
+.dropzone,
 .ck-editor__editable[role="textbox"],
 .data-form .input-group .ts-control {
   @apply text-third border-third/20 dark:bg-dark-second dark:border-dark-second dark:text-supporting-dark-second dark:border-0;
@@ -332,7 +336,7 @@ textarea {
 
 /* Ckeditor */
 .ck-editor__editable[role="textbox"] {
-  min-height: 300px;
+  @apply min-h-[300px] dark:bg-supporting-dark-second dark:text-supporting-dark;
 }
 
 .ck-rounded-corners .ck.ck-editor__top .ck-sticky-panel .ck-toolbar {
@@ -455,4 +459,43 @@ textarea {
 
 .switch-input-group .slider.round:before {
   border-radius: 50%;
+}
+
+/* Dropzone */
+.dropzone {
+  @apply border-2 border-dashed  dark:bg-supporting-dark-second dark:text-dark-second;
+}
+
+.dropzone .dz-message {
+  @apply mt-16;
+}
+
+.dropzone .dz-preview.dz-image-preview {
+  @apply bg-transparent;
+}
+
+/* Form Validation */
+/* 
+.data-form .input-group.has-success input,
+.data-form .input-group.has-success select,
+.data-form .input-group.has-success textarea {
+  @apply border-b-2  border-b-success
+}
+
+.data-form .input-group.has-danger input,
+.data-form .input-group.has-danger select,
+.data-form .input-group.has-danger textarea {
+  @apply border-b-2 border-b-danger;
+} */
+
+.input-group .text-help {
+  color: #dc1d34;
+}
+
+.inline-label label {
+  display: inline;
+}
+
+.pristine-error {
+  display: table;
 }

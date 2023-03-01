@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Form select
-  new TomSelect("#product-tags", {
+  new TomSelect("#tags", {
     plugins: {
       remove_button: {
         title: "Remove this item",
@@ -75,5 +75,57 @@ document.addEventListener("DOMContentLoaded", () => {
   // Form Ckeditor
   ClassicEditor.create(document.querySelector("#editor")).catch((error) => {
     console.error(error);
+  });
+
+  // Form Dropzone
+  Dropzone.autoDiscover = false;
+  let myDropzone = new Dropzone("div#productDropzone", { url: "/file/post" });
+
+  //Form validation
+  var form = document.getElementById("product-form");
+
+  // create the pristine instance
+  var pristine = new Pristine(form, {
+    classTo: "input-group",
+    errorTextParent: "input-group",
+  });
+
+  var categoryEl = document.getElementById("category-ts-control");
+
+  pristine.addValidator(
+    categoryEl,
+    function (value) {
+      console.log(value);
+
+      if (value.length) {
+        return true;
+      }
+      return false;
+    },
+    "This field is required",
+    2,
+    false
+  );
+
+  var tagsEl = document.getElementById("tags-ts-control");
+
+  pristine.addValidator(
+    tagsEl,
+    function (value) {
+      if (value.length) {
+        return true;
+      }
+      return false;
+    },
+    "This field is required",
+    2,
+    false
+  );
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // check if the form is valid
+    var valid = pristine.validate(); // returns true or false
   });
 });

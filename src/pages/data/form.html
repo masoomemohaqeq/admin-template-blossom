@@ -20,6 +20,7 @@
 
     <link rel="stylesheet" href="/src/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="/src/plugins/tom-select/tom-select.min.css" />
+    <link rel="stylesheet" href="/src/plugins/dropzone/dropzone.min.css" />
 
     <link rel="stylesheet" href="/dist/output.css" />
   </head>
@@ -421,7 +422,7 @@
           class="invisible opacity-0 dash-sidebar h-full bg-black/70 fixed inset-0 transition-all duration-200 z-20 xl:relative xl:visible xl:opacity-100 xl:z-0"
         >
           <div
-            class="bg-third text-white w-5/6 p-4 h-screen dash-sidebar-menu -translate-x-96 transition-all max-w-sm xl:max-w-none xl:translate-x-0 xl:w-full dark:bg-dark-second dark:text-supporting-dark-first"
+            class="bg-third text-white w-5/6 p-4 h-full min-h-screen dash-sidebar-menu -translate-x-96 transition-all max-w-sm xl:max-w-none xl:translate-x-0 xl:w-full dark:bg-dark-second dark:text-supporting-dark-first"
           >
             <div class="flex justify-between items-center">
               <div class="flex items-center space-x-2">
@@ -526,22 +527,54 @@
       >
         <div class="p-4 w-full h-full space-y-5">
           <div class="box">
-            <div class="px-6 pt-8 pb-5">
-              <h5 class="box-title font-semibold">Form</h5>
+            <div class="px-6 pt-8 pb-5 max-w-6xl mx-auto">
+              <h5 class="box-title font-semibold">Product</h5>
             </div>
             <div
-              class="px-6 py-8 border rounded-md shadow-sm dark:bg-dark-first dark:text-supporting-dark-first dark:border-dark-second"
+              class="max-w-6xl mx-auto px-6 py-8 border rounded-md shadow-sm dark:bg-dark-first dark:text-supporting-dark-first dark:border-dark-second"
             >
-              <form class="data-form">
+              <form class="data-form" id="product-form" novalidate>
                 <div class="input-group">
-                  <label for="product-name">Product Name</label>
+                  <label>Card Image</label>
+
+                  <div
+                    class="w-44 h-44 p-1 rounded-md bg-supporting-extra-light light shadow-spread relative text-supporting-light dark:bg-supporting-dark-second dark:text-supporting-dark-first"
+                  >
+                    <img
+                      class="w-full h-full object-cover rounded-md"
+                      src="/src/images/before-coffee.jpg"
+                      alt="profile"
+                    />
+                    <button
+                      type="button"
+                      class="absolute -top-4 -right-4 z-10 w-9 h-9 rounded-full bg-white shadow-spread flex justify-center items-center dark:bg-dark-second"
+                    >
+                      <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="absolute -bottom-4 -right-4 z-10 w-9 h-9 rounded-full bg-white shadow-spread flex justify-center items-center dark:bg-dark-second"
+                    >
+                      <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                  </div>
+                  <p
+                    class="text-sm text-supporting-light dark:text-supporting-dark-first"
+                  >
+                    Allowed file types: png, jpg, jpeg.
+                  </p>
+                </div>
+                <div class="input-group">
+                  <label for="product-name">Name</label>
 
                   <input
                     type="text"
                     name="product-name"
                     id="product-name"
                     class="w-full"
-                    placeholder="Email"
+                    placeholder="Name"
+                    required
+                    min="2"
                   />
                 </div>
                 <div class="input-group">
@@ -552,9 +585,14 @@
                     placeholder="Select a cateogry..."
                     autocomplete="off"
                   >
-                    <option value="">Select a cateogry...</option>
+                    <option value="-1">Select a cateogry...</option>
                     <option value="4">PC & Laptop</option>
                   </select>
+                </div>
+                <div class="input-group">
+                  <label>Images</label>
+
+                  <div class="dropzone" id="productDropzone"></div>
                 </div>
                 <div class="input-group">
                   <label for="quantity">Quantity</label>
@@ -565,6 +603,8 @@
                       id="quantity"
                       class="w-full"
                       placeholder="Quantity"
+                      required
+                      min="0"
                     />
                     <div class="input-desc">pcs</div>
                   </div>
@@ -580,6 +620,7 @@
                       id="price"
                       class="w-full"
                       placeholder="Price"
+                      required
                     />
                   </div>
                 </div>
@@ -589,11 +630,7 @@
                   "
                     >Tags</label
                   >
-                  <input
-                    id="product-tags"
-                    value="awesome,neat"
-                    autocomplete="off"
-                  />
+                  <input id="tags" value="awesome,neat" autocomplete="off" />
                 </div>
                 <div class="input-group">
                   <label
@@ -601,9 +638,10 @@
                   "
                     >Create Date</label
                   >
-                  <input id="date" type="date" class="w-full" />
+                  <input id="date" type="date" class="w-full" required />
                 </div>
-                <div class="switch-input-group">
+                <div></div>
+                <div class="input-group switch-input-group">
                   <label for="isActive">Active Status</label>
                   <label class="switch">
                     <input
@@ -615,10 +653,21 @@
                     <span class="slider round"></span>
                   </label>
                 </div>
+                <div class="input-group">
+                  <label for="summary">Summary</label>
+
+                  <textarea
+                    name="summary"
+                    id="summary"
+                    rows="10"
+                    class="w-full"
+                  ></textarea>
+                </div>
                 <div class="editor-input-group">
                   <label>Description</label>
                   <div id="editor"></div>
                 </div>
+                <button type="submit" class="btn-first">Submit</button>
               </form>
             </div>
           </div>
@@ -628,6 +677,9 @@
 
     <script src="/src/plugins/tom-select/tom-select.complete.js"></script>
     <script src="/src/plugins/ckeditor/ckeditor.min.js"></script>
+    <script src="/src/plugins/pristine/pristine.min.js"></script>
+
     <script src="/src/js/global.js"></script>
+    <script src="/src/plugins/dropzone/dropzone.min.js"></script>
   </body>
 </html>
