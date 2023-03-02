@@ -1,0 +1,21 @@
+.float-input {
+  @apply relative;
+}
+
+.float-input input::placeholder {
+  @apply opacity-0;
+}
+
+.float-input .float-label {
+  @apply transition-all absolute-center-y left-3;
+}
+
+.float-input input:focus,
+.float-input input:not(:placeholder-shown) {
+  @apply border-first;
+}
+
+.float-input input:focus + .float-label,
+.float-input input:not(:placeholder-shown) + .float-label {
+  @apply text-xs top-0 bg-white px-1 text-first;
+}

@@ -1,0 +1,16 @@
+/* Buttons */
+.btn {
+  @apply py-3 px-6 rounded-md text-center text-sm font-semibold tracking-wide inline-block;
+}
+
+.btn-first {
+  @apply btn bg-first text-supporting-extra-light;
+}
+
+.btn-second {
+  @apply btn bg-second text-supporting-extra-light dark:bg-third;
+}
+
+.btn-link-first {
+  @apply text-first;
+}

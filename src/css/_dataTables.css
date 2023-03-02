@@ -1,0 +1,30 @@
+/* Data Tables */
+
+.data-table {
+  border-collapse: separate;
+  border-spacing: 0 1em;
+}
+
+.data-table thead > tr > td {
+  @apply p-6;
+}
+
+.data-table tbody > tr > td {
+  @apply bg-supporting-mid-light/10 px-6 py-2 dark:bg-dark-first;
+}
+
+.data-table > tbody > tr > td:first-child {
+  @apply rounded-l-lg;
+}
+
+.data-table > tbody > tr > td:last-child {
+  @apply rounded-r-lg;
+}
+
+.pagination > * {
+  @apply flex justify-center items-center rounded-md w-10 h-10 p-4;
+}
+
+.pagination .active {
+  @apply border border-supporting-mid-light/10 shadow-sm dark:bg-dark-first;
+}

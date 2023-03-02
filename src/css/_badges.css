@@ -1,0 +1,9 @@
+/* badges */
+
+.badge {
+  @apply text-sm;
+}
+
+.badge-primary {
+  @apply badge bg-supporting-third/10 text-first px-3 py-1 rounded-full;
+}

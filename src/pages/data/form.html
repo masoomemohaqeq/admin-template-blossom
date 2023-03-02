@@ -539,58 +539,64 @@
       >
         <div class="p-4 w-full h-full space-y-5">
           <div class="box">
-            <div class="px-6 pt-8 pb-5 max-w-6xl mx-auto">
-              <h5 class="box-title font-semibold">Product</h5>
+            <div class="px-6 pt-8 pb-5 border-b dark:border-b-dark-first">
+              <h5 class="font-semibold dark:text-supporting-dark-first">
+                Product
+              </h5>
             </div>
             <div
-              class="max-w-6xl mx-auto px-6 py-8 border rounded-md shadow-sm dark:bg-dark-first dark:text-supporting-dark-first dark:border-dark-second"
+              class="px-6 py-8 rounded-md shadow-sm dark:text-supporting-dark-first dark:border-dark-second"
             >
               <form class="data-form" id="product-form" novalidate>
                 <div class="input-group">
                   <label>Card Image</label>
-
-                  <div
-                    class="w-44 h-44 p-1 rounded-md bg-supporting-extra-light light shadow-spread relative text-supporting-light dark:bg-supporting-dark-second dark:text-supporting-dark-first"
-                  >
-                    <img
-                      class="w-full h-full object-cover rounded-md"
-                      src="/src/images/before-coffee.jpg"
-                      alt="profile"
-                    />
-                    <button
-                      type="button"
-                      class="absolute -top-4 -right-4 w-9 h-9 rounded-full bg-white shadow-spread flex justify-center items-center dark:bg-dark-second"
+                  <div class="space-y-3">
+                    <div
+                      class="w-44 h-44 p-1 rounded-md bg-supporting-extra-light light shadow-spread relative text-supporting-light dark:bg-supporting-dark-second dark:text-supporting-dark-first"
                     >
-                      <i class="fa-solid fa-pen"></i>
-                    </button>
-                    <button
-                      type="button"
-                      class="absolute -bottom-4 -right-4 w-9 h-9 rounded-full bg-white shadow-spread flex justify-center items-center dark:bg-dark-second"
+                      <img
+                        class="w-full h-full object-cover rounded-md"
+                        src="/src/images/before-coffee.jpg"
+                        alt="profile"
+                      />
+                      <button
+                        type="button"
+                        class="absolute -top-4 -right-4 w-9 h-9 rounded-full bg-white shadow-spread flex justify-center items-center dark:bg-dark-second"
+                      >
+                        <i class="fa-solid fa-pen"></i>
+                      </button>
+                      <button
+                        type="button"
+                        class="absolute -bottom-4 -right-4 w-9 h-9 rounded-full bg-white shadow-spread flex justify-center items-center dark:bg-dark-second"
+                      >
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                      </button>
+                    </div>
+                    <p
+                      class="text-sm text-supporting-light dark:text-supporting-dark-first"
                     >
-                      <i class="fa-solid fa-xmark text-lg"></i>
-                    </button>
+                      Allowed file types: png, jpg, jpeg.
+                    </p>
                   </div>
-                  <p
-                    class="text-sm text-supporting-light dark:text-supporting-dark-first"
-                  >
-                    Allowed file types: png, jpg, jpeg.
-                  </p>
                 </div>
                 <div class="input-group">
-                  <label for="product-name">Name</label>
+                  <label for="product-name" class="form-label"
+                    >Name
+                    <span class="text-red-500">*</span>
+                  </label>
 
                   <input
                     type="text"
                     name="product-name"
                     id="product-name"
-                    class="w-full"
+                    class="w-full form-control"
                     placeholder="Name"
                     required
                     min="2"
                   />
                 </div>
                 <div class="input-group">
-                  <label for="category">Category</label>
+                  <label for="category" class="form-label">Category</label>
 
                   <select
                     id="category"
@@ -602,18 +608,18 @@
                   </select>
                 </div>
                 <div class="input-group">
-                  <label>Images</label>
+                  <label class="form-label">Images</label>
 
                   <div class="dropzone" id="productDropzone"></div>
                 </div>
                 <div class="input-group">
-                  <label for="quantity">Quantity</label>
+                  <label for="quantity" class="form-label">Quantity</label>
                   <div class="input-w-desc right">
                     <input
                       type="number"
                       name="quantity"
                       id="quantity"
-                      class="w-full"
+                      class="w-full form-control"
                       placeholder="Quantity"
                       required
                       min="0"
@@ -622,7 +628,7 @@
                   </div>
                 </div>
                 <div class="input-group">
-                  <label for="price">Price</label>
+                  <label for="price" class="form-label">Price</label>
                   <div class="input-w-desc left">
                     <div class="input-desc">Unit</div>
 
@@ -630,56 +636,59 @@
                       type="number"
                       name="price"
                       id="price"
-                      class="w-full"
+                      class="w-full form-control"
                       placeholder="Price"
                       required
                     />
                   </div>
                 </div>
                 <div class="input-group">
-                  <label
-                    for="product-tags
-                  "
-                    >Tags</label
-                  >
-                  <input id="tags" value="awesome,neat" autocomplete="off" />
+                  <label for="product-tags" class="form-label">Tags</label>
+                  <input
+                    id="tags"
+                    value="awesome,neat"
+                    class="form-control"
+                    autocomplete="off"
+                  />
                 </div>
                 <div class="input-group">
-                  <label
-                    for="date
-                  "
-                    >Create Date</label
-                  >
-                  <input id="date" type="date" class="w-full" required />
+                  <label for="date" class="form-label">Create Date</label>
+                  <input
+                    id="date"
+                    type="date"
+                    class="w-full form-control"
+                    required
+                  />
                 </div>
                 <div></div>
-                <div class="input-group switch-input-group">
-                  <label for="isActive">Active Status</label>
+                <div class="switch-input-group">
+                  <label for="isActive" class="form-label">Active Status</label>
                   <label class="switch">
                     <input
                       type="checkbox"
                       name="isActive"
                       id="isActive"
                       checked
+                      class="form-control"
                     />
                     <span class="slider round"></span>
                   </label>
                 </div>
                 <div class="input-group">
-                  <label for="summary">Summary</label>
+                  <label for="summary" class="form-label">Summary</label>
 
                   <textarea
                     name="summary"
                     id="summary"
                     rows="10"
-                    class="w-full"
+                    class="w-full form-control"
                   ></textarea>
                 </div>
                 <div class="editor-input-group">
-                  <label>Description</label>
-                  <div id="editor"></div>
+                  <label class="form-label">Description</label>
+                  <div id="editor" class="form-control"></div>
                 </div>
-                <div class="md:space-x-4">
+                <div class="w-fit space-y-4 md:space-x-4 lg:mx-auto">
                   <button type="submit" class="btn-first">Submit</button>
                   <button type="reset" class="btn-second">Reset</button>
                 </div>
