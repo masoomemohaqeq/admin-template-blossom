@@ -20,7 +20,6 @@
 
     <link rel="stylesheet" href="/src/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="/src/plugins/tom-select/tom-select.min.css" />
-    <link rel="stylesheet" href="/src/plugins/dropzone/dropzone.min.css" />
 
     <link rel="stylesheet" href="/dist/output.css" />
   </head>
@@ -334,15 +333,15 @@
             >
               <div class="w-12 h-12">
                 <img
-                  src="/src/images/profiles/julian-wan-WNoLnJo7tS8-unsplash.jpg"
+                  src="/src/images/profiles/square-portrait-g8ad902acb_1920.jpg"
                   alt="christopher"
-                  class="rounded-lg"
+                  class="rounded-lg object-cover"
                 />
               </div>
               <div
                 class="text-supporting-middle hidden md:inline-block dark:text-supporting-dark-first"
               >
-                John Black
+                Rose Black
                 <p class="text-sm">Frontend developer</p>
               </div>
             </div>
@@ -360,7 +359,7 @@
               <div class="flex items-center p-6 gap-2">
                 <div class="w-14 h-14">
                   <img
-                    src="/src/images/profiles/julian-wan-WNoLnJo7tS8-unsplash.jpg"
+                    src="/src/images/profiles/square-portrait-g8ad902acb_1920.jpg"
                     alt="christopher"
                     class="rounded-lg"
                   />
@@ -368,7 +367,7 @@
                 <div
                   class="text-black font-bold dark:text-supporting-dark-first"
                 >
-                  John Black
+                  Rose Black
                   <p class="text-sm">Frontend developer</p>
                 </div>
               </div>
@@ -376,7 +375,7 @@
               <ul class="p-4 space-y-2">
                 <li>
                   <a
-                    href="#"
+                    href="./profile.html"
                     class="inline-block w-full space-x-2 p-2 transition hover:bg-third/10 rounded-md"
                   >
                     <i class="fa-regular fa-user"></i>
@@ -385,7 +384,7 @@
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="./profile.html"
                     class="inline-block w-full space-x-2 p-2 transition hover:bg-third/10 rounded-md"
                   >
                     <i class="fa-solid fa-gear"></i>
@@ -504,7 +503,7 @@
                   </li>
                   <li>
                     <label
-                      class="p-4 w-full rounded-xl flex justify-between items-center"
+                      class="p-4 w-full rounded-xl flex justify-between items-center current"
                     >
                       <a href="./profile.html">
                         <div class="space-x-2">
@@ -540,14 +539,12 @@
         <div class="p-4 w-full h-full space-y-5">
           <div class="box">
             <!-- Profile -->
-            <div
-              class="p-4 space-y-5 max-w-6xl mx-auto md:flex md:gap-6 md:space-y-1"
-            >
+            <div class="p-4 space-y-5 md:flex md:gap-6 md:space-y-1">
               <!-- Profile Picture -->
               <div class="w-44 h-44">
                 <img
                   class="w-full h-full object-cover rounded-md"
-                  src="/src/images/profiles/christopher-campbell-rDEOVtE7vOs-unsplash.jpg"
+                  src="/src/images/profiles/portrait-g8ad902acb_1920.jpg"
                   alt="profile"
                 />
               </div>
@@ -557,7 +554,7 @@
                 <div
                   class="text-xl font-bold space-x-4 dark:text-supporting-dark-first"
                 >
-                  Max Smith
+                  Rose Smith
                   <i
                     class="fa-solid fa-certificate text-supporting-third inline-block"
                   ></i>
@@ -581,7 +578,7 @@
                 </div>
 
                 <!-- Little Boxes -->
-                <div class="flex flex-col gap-4 md:flex-row">
+                <div class="flex gap-4">
                   <div class="flex gap-3">
                     <div
                       class="w-11 h-11 rounded-md relative bg-first/20 text-first"
@@ -606,7 +603,7 @@
                       class="w-11 h-11 rounded-md relative bg-first/20 text-first"
                     >
                       <i
-                        class="fa-regular fa-square-check absolute-center text-2xl"
+                        class="fa-solid fa-suitcase absolute-center text-2xl"
                       ></i>
                     </div>
                     <div class="flex flex-col">
@@ -625,149 +622,230 @@
             </div>
           </div>
           <div class="box">
-            <div class="px-6 pt-8 pb-5 max-w-6xl mx-auto">
-              <h5 class="box-title font-semibold">Product</h5>
+            <div
+              class="font-semibold text-lg text-supporting-light space-x-2 dark:text-supporting-dark-first"
+            >
+              <label
+                for="overview"
+                data-tab="profile-tab"
+                class="label-tab p-6 inline-block cursor-pointer active-tab"
+                >Overview</label
+              >
+              <label
+                for="settings"
+                data-tab="profile-tab"
+                class="label-tab p-6 inline-block cursor-pointer"
+                >Settings</label
+              >
+            </div>
+          </div>
+          <div class="box">
+            <div class="px-6 pt-8 pb-5 border-b dark:border-b-dark-first">
+              <h5 class="font-semibold dark:text-supporting-dark-first">
+                Profile Details
+              </h5>
             </div>
             <div
-              class="max-w-6xl mx-auto px-6 py-8 border rounded-md shadow-sm dark:bg-dark-first dark:text-supporting-dark-first dark:border-dark-second"
+              class="px-6 py-8 dark:text-supporting-dark-first dark:border-dark-second"
             >
-              <form class="data-form" id="product-form" novalidate>
-                <div class="input-group">
-                  <label>Card Image</label>
-
-                  <div
-                    class="w-44 h-44 p-1 rounded-md bg-supporting-extra-light light shadow-spread relative text-supporting-light dark:bg-supporting-dark-second dark:text-supporting-dark-first"
-                  >
-                    <img
-                      class="w-full h-full object-cover rounded-md"
-                      src="/src/images/before-coffee.jpg"
-                      alt="profile"
-                    />
-                    <button
-                      type="button"
-                      class="absolute -top-4 -right-4 w-9 h-9 rounded-full bg-white shadow-spread flex justify-center items-center dark:bg-dark-second"
+              <input
+                type="radio"
+                class="chk-tab w-0 h-0"
+                name="profile-tab"
+                id="overview"
+                checked
+              />
+              <div class="tab-content hidden space-y-5">
+                <div>
+                  <div>
+                    <label
+                      class="text-supporting-light dark:text-supporting-dark-first"
+                      >Full Name</label
                     >
-                      <i class="fa-solid fa-pen"></i>
-                    </button>
-                    <button
-                      type="button"
-                      class="absolute -bottom-4 -right-4 w-9 h-9 rounded-full bg-white shadow-spread flex justify-center items-center dark:bg-dark-second"
-                    >
-                      <i class="fa-solid fa-xmark text-lg"></i>
-                    </button>
                   </div>
-                  <p
-                    class="text-sm text-supporting-light dark:text-supporting-dark-first"
-                  >
-                    Allowed file types: png, jpg, jpeg.
-                  </p>
+                  <div>
+                    <span class="font-semibold">Rose Smith</span>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <label
+                      class="text-supporting-light dark:text-supporting-dark-first"
+                      >Company</label
+                    >
+                  </div>
+                  <div>
+                    <span class="font-semibold">Keenthemes</span>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <label
+                      class="text-supporting-light dark:text-supporting-dark-first"
+                      >Contact Phone</label
+                    >
+                  </div>
+                  <div>
+                    <span class="font-semibold">09151234565</span>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <label
+                      class="text-supporting-light dark:text-supporting-dark-first"
+                      >Email</label
+                    >
+                  </div>
+                  <div>
+                    <span class="font-semibold">Rose.smith@outlook.com</span>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <label
+                      class="text-supporting-light dark:text-supporting-dark-first"
+                      >Country</label
+                    >
+                  </div>
+                  <div>
+                    <span class="font-semibold">Iran</span>
+                  </div>
+                </div>
+              </div>
+              <input
+                type="radio"
+                class="chk-tab w-0 h-0"
+                name="profile-tab"
+                id="settings"
+              />
+              <form
+                class="data-form tab-content hidden"
+                id="profile-form"
+                novalidate
+              >
+                <div class="input-group">
+                  <label class="form-label">Avatar</label>
+                  <div class="space-y-3">
+                    <div
+                      class="w-44 h-44 p-1 rounded-md bg-supporting-extra-light light shadow-spread relative text-supporting-light dark:bg-supporting-dark-second dark:text-supporting-dark-first"
+                    >
+                      <img
+                        class="w-full h-full object-cover rounded-md"
+                        src="/src/images/profiles/portrait-g8ad902acb_1920.jpg"
+                        alt="profile"
+                      />
+                      <button
+                        type="button"
+                        class="absolute -top-4 -right-4 w-9 h-9 rounded-full bg-white shadow-spread flex justify-center items-center dark:bg-dark-second"
+                      >
+                        <i class="fa-solid fa-pen"></i>
+                      </button>
+                      <button
+                        type="button"
+                        class="absolute -bottom-4 -right-4 w-9 h-9 rounded-full bg-white shadow-spread flex justify-center items-center dark:bg-dark-second"
+                      >
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                      </button>
+                    </div>
+                    <p
+                      class="text-sm text-supporting-light dark:text-supporting-dark-first"
+                    >
+                      Allowed file types: png, jpg, jpeg.
+                    </p>
+                  </div>
                 </div>
                 <div class="input-group">
-                  <label for="product-name">Name</label>
+                  <label for="product-name" class="form-label"
+                    >Full Name
+                    <span class="text-red-500">*</span>
+                  </label>
 
                   <input
                     type="text"
                     name="product-name"
                     id="product-name"
-                    class="w-full"
-                    placeholder="Name"
+                    class="w-full form-control"
+                    placeholder="Full Name"
                     required
                     min="2"
                   />
                 </div>
                 <div class="input-group">
-                  <label for="category">Category</label>
+                  <label for="phone" class="form-label"
+                    >Phone
+                    <span class="text-red-500">*</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    name="phone"
+                    id="phone"
+                    class="w-full form-control"
+                    placeholder="Phone"
+                    required
+                    min="2"
+                  />
+                </div>
+                <div class="input-group">
+                  <label for="email" class="form-label"
+                    >Email
+                    <span class="text-red-500">*</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    name="email"
+                    id="email"
+                    class="w-full form-control"
+                    placeholder="Email"
+                    required
+                    min="2"
+                  />
+                </div>
+                <div class="input-group">
+                  <label for="country" class="form-label"
+                    >Country
+                    <span class="text-red-500">*</span>
+                  </label>
 
                   <select
-                    id="category"
-                    placeholder="Select a cateogry..."
+                    id="country"
+                    placeholder="Select a country..."
                     autocomplete="off"
                   >
-                    <option value="-1">Select a cateogry...</option>
-                    <option value="4">PC & Laptop</option>
+                    <option value="-1">Select a country...</option>
+                    <option value="1">Iran</option>
                   </select>
                 </div>
-                <div class="input-group">
-                  <label>Images</label>
 
-                  <div class="dropzone" id="productDropzone"></div>
-                </div>
                 <div class="input-group">
-                  <label for="quantity">Quantity</label>
-                  <div class="input-w-desc right">
-                    <input
-                      type="number"
-                      name="quantity"
-                      id="quantity"
-                      class="w-full"
-                      placeholder="Quantity"
-                      required
-                      min="0"
-                    />
-                    <div class="input-desc">pcs</div>
-                  </div>
-                </div>
-                <div class="input-group">
-                  <label for="price">Price</label>
-                  <div class="input-w-desc left">
-                    <div class="input-desc">Unit</div>
+                  <label for="biography" class="form-label">Biography</label>
 
-                    <input
-                      type="number"
-                      name="price"
-                      id="price"
-                      class="w-full"
-                      placeholder="Price"
-                      required
-                    />
-                  </div>
+                  <textarea
+                    name="biography"
+                    id="biography"
+                    rows="10"
+                    class="w-full form-control"
+                    placeholder="Biography"
+                  ></textarea>
                 </div>
-                <div class="input-group">
-                  <label
-                    for="product-tags
-                  "
-                    >Tags</label
+                <div class="switch-input-group">
+                  <label for="marketing" class="form-label"
+                    >Allow Marketing</label
                   >
-                  <input id="tags" value="awesome,neat" autocomplete="off" />
-                </div>
-                <div class="input-group">
-                  <label
-                    for="date
-                  "
-                    >Create Date</label
-                  >
-                  <input id="date" type="date" class="w-full" required />
-                </div>
-                <div></div>
-                <div class="input-group switch-input-group">
-                  <label for="isActive">Active Status</label>
                   <label class="switch">
                     <input
                       type="checkbox"
-                      name="isActive"
-                      id="isActive"
+                      name="marketing"
+                      id="marketing"
                       checked
+                      class="form-control"
                     />
                     <span class="slider round"></span>
                   </label>
                 </div>
-                <div class="input-group">
-                  <label for="summary">Summary</label>
-
-                  <textarea
-                    name="summary"
-                    id="summary"
-                    rows="10"
-                    class="w-full"
-                  ></textarea>
-                </div>
-                <div class="editor-input-group">
-                  <label>Description</label>
-                  <div id="editor"></div>
-                </div>
-                <div class="md:space-x-4">
-                  <button type="submit" class="btn-first">Submit</button>
-                  <button type="reset" class="btn-second">Reset</button>
+                <div class="w-fit space-y-4 md:space-x-4 lg:mx-auto">
+                  <button type="submit" class="btn-first">Save</button>
                 </div>
               </form>
             </div>
@@ -777,10 +855,9 @@
     </div>
 
     <script src="/src/plugins/tom-select/tom-select.complete.js"></script>
-    <script src="/src/plugins/ckeditor/ckeditor.min.js"></script>
     <script src="/src/plugins/pristine/pristine.min.js"></script>
 
     <script src="/src/js/global.js"></script>
-    <script src="/src/plugins/dropzone/dropzone.min.js"></script>
+    <script src="/src/js/profile.js"></script>
   </body>
 </html>

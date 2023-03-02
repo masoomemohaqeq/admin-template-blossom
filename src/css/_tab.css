@@ -1,0 +1,7 @@
+input.chk-tab:checked + .tab-content {
+  @apply block;
+}
+
+.label-tab.active-tab {
+  @apply border-b-4  border-first text-first;
+}

@@ -46,86 +46,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Form select
-  new TomSelect("#tags", {
-    plugins: {
-      remove_button: {
-        title: "Remove this item",
-      },
-    },
-    persist: false,
-    createOnBlur: true,
-    create: true,
-    onDelete: function (values) {
-      return confirm(
-        values.length > 1
-          ? "Are you sure you want to remove these " + values.length + " items?"
-          : 'Are you sure you want to remove "' + values[0] + '"?'
-      );
-    },
-  });
-  new TomSelect("#category", {
-    create: true,
-    sortField: {
-      field: "text",
-      direction: "asc",
-    },
-  });
+  // Tab
 
-  // Form Ckeditor
-  ClassicEditor.create(document.querySelector("#editor")).catch((error) => {
-    console.error(error);
-  });
-
-  // Form Dropzone
-  Dropzone.autoDiscover = false;
-  let myDropzone = new Dropzone("div#productDropzone", { url: "/file/post" });
-
-  //Form validation
-  var form = document.getElementById("product-form");
-
-  // create the pristine instance
-  var pristine = new Pristine(form, {
-    classTo: "input-group",
-    errorTextParent: "input-group",
-  });
-
-  var categoryEl = document.getElementById("category-ts-control");
-
-  pristine.addValidator(
-    categoryEl,
-    function (value) {
-      console.log(value);
-
-      if (value.length) {
-        return true;
-      }
-      return false;
-    },
-    "This field is required",
-    2,
-    false
-  );
-
-  var tagsEl = document.getElementById("tags-ts-control");
-
-  pristine.addValidator(
-    tagsEl,
-    function (value) {
-      if (value.length) {
-        return true;
-      }
-      return false;
-    },
-    "This field is required",
-    2,
-    false
-  );
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    // check if the form is valid
-    var valid = pristine.validate(); // returns true or false
+  [...document.querySelectorAll(".chk-tab")].forEach((chkEl) => {
+    chkEl.addEventListener("change", (e) => {
+      [
+        ...document.querySelectorAll(`.label-tab[data-tab="${e.target.name}"]`),
+      ].forEach((labelEl) => {
+        labelEl.classList.remove("active-tab");
+      });
+      document
+        .querySelector(`.label-tab[for="${e.target.id}"]`)
+        .classList.add("active-tab");
+    });
   });
 });

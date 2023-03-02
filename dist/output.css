@@ -998,10 +998,6 @@ h6 {
   width: 100vw;
 }
 
-.max-w-6xl {
-  max-width: 72rem;
-}
-
 .max-w-sm {
   max-width: 24rem;
 }
@@ -2393,6 +2389,18 @@ h6 {
   --tw-scale-x: 1;
   --tw-scale-y: 1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+input.chk-tab:checked + .tab-content {
+  display: block;
+}
+
+.label-tab.active-tab {
+  border-bottom-width: 4px;
+  --tw-border-opacity: 1;
+  border-color: rgb(160 90 255 / var(--tw-border-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(160 90 255 / var(--tw-text-opacity));
 }
 
 @media (min-width: 1280px) {
