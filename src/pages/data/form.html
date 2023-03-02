@@ -549,7 +549,7 @@
             >
               <form class="data-form" id="product-form" novalidate>
                 <div class="input-group">
-                  <label>Card Image</label>
+                  <label class="form-label">Card Image</label>
                   <div class="space-y-3">
                     <div
                       class="w-44 h-44 p-1 rounded-md bg-supporting-extra-light light shadow-spread relative text-supporting-light dark:bg-supporting-dark-second dark:text-supporting-dark-first"
@@ -596,7 +596,10 @@
                   />
                 </div>
                 <div class="input-group">
-                  <label for="category" class="form-label">Category</label>
+                  <label for="category" class="form-label"
+                    >Category
+                    <span class="text-red-500">*</span>
+                  </label>
 
                   <select
                     id="category"
@@ -613,52 +616,59 @@
                   <div class="dropzone" id="productDropzone"></div>
                 </div>
                 <div class="input-group">
-                  <label for="quantity" class="form-label">Quantity</label>
-                  <div class="input-w-desc right">
+                  <label for="quantity" class="form-label"
+                    >Quantity
+                    <span class="text-red-500">*</span>
+                  </label>
+                  <div class="input-w-desc right flex">
                     <input
                       type="number"
                       name="quantity"
                       id="quantity"
-                      class="w-full form-control"
+                      class="form-control flex-1"
                       placeholder="Quantity"
                       required
                       min="0"
                     />
-                    <div class="input-desc">pcs</div>
+                    <div
+                      class="input-desc bg-black/5 text-third p-4 border dark:border-0 dark:bg-supporting-dark-first/20 dark:text-supporting-dark-first rounded-r-md"
+                    >
+                      pcs
+                    </div>
                   </div>
                 </div>
                 <div class="input-group">
-                  <label for="price" class="form-label">Price</label>
-                  <div class="input-w-desc left">
-                    <div class="input-desc">Unit</div>
+                  <label for="price" class="form-label"
+                    >Price
+                    <span class="text-red-500">*</span>
+                  </label>
+                  <div class="input-w-desc left flex">
+                    <div
+                      class="input-desc bg-black/5 text-third p-4 border dark:border-0 dark:bg-supporting-dark-first/20 dark:text-supporting-dark-first"
+                    >
+                      Unit
+                    </div>
 
                     <input
                       type="number"
                       name="price"
                       id="price"
-                      class="w-full form-control"
+                      class="flex-1 form-control"
                       placeholder="Price"
                       required
                     />
                   </div>
                 </div>
                 <div class="input-group">
-                  <label for="product-tags" class="form-label">Tags</label>
-                  <input
-                    id="tags"
-                    value="awesome,neat"
-                    class="form-control"
-                    autocomplete="off"
-                  />
+                  <label for="product-tags" class="form-label"
+                    >Tags
+                    <span class="text-red-500">*</span>
+                  </label>
+                  <input id="tags" value="awesome,neat" autocomplete="off" />
                 </div>
                 <div class="input-group">
                   <label for="date" class="form-label">Create Date</label>
-                  <input
-                    id="date"
-                    type="date"
-                    class="w-full form-control"
-                    required
-                  />
+                  <input id="date" type="date" class="w-full form-control" />
                 </div>
                 <div></div>
                 <div class="switch-input-group">
@@ -682,6 +692,7 @@
                     id="summary"
                     rows="10"
                     class="w-full form-control"
+                    placeholder="Summary"
                   ></textarea>
                 </div>
                 <div class="editor-input-group">

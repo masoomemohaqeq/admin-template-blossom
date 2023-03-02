@@ -1,12 +1,9 @@
 /* Forms */
 
-input,
-textarea,
+.form-control,
 .dropzone {
   @apply border rounded-md py-3 px-4 outline-0;
 }
-
-/* Data Form */
 
 .data-form {
   @apply space-y-4;
@@ -15,30 +12,29 @@ textarea,
 .data-form .input-group,
 .data-form .editor-input-group,
 .data-form .switch-input-group {
-  @apply space-y-3 lg:flex lg:space-y-0 lg:items-center;
+  @apply space-y-3 lg:flex lg:space-y-0;
 }
 
-.data-form .input-group label,
-.data-form .editor-input-group > label:first-child,
-.data-form .switch-input-group > label:first-child {
+.form-label {
   @apply text-third font-semibold block  dark:text-supporting-dark-second lg:w-1/3;
 }
-.data-form .input-group input,
+
+.form-control,
 .data-form .input-group .input-w-desc,
-.data-form .input-group textarea,
 .dropzone,
 .ck.ck-reset,
 .data-form .input-group .ts-wrapper {
   @apply lg:w-2/3;
 }
-.data-form .input-group input,
-.data-form .input-group textarea,
+
+.form-control,
 .dropzone,
 .ck-editor__editable[role="textbox"],
 .data-form .input-group .ts-control {
   @apply text-third border-third/20 dark:bg-dark-second dark:border-dark-first dark:text-supporting-dark-second;
 }
 
+/* Tom select */
 .ts-wrapper.multi .ts-control > div {
   @apply text-base text-third dark:bg-supporting-dark-first;
 }
@@ -48,20 +44,8 @@ textarea,
   @apply text-base;
 }
 
-.data-form .input-group input::placeholder {
+.form-control::placeholder {
   @apply text-third text-base dark:text-supporting-dark-second;
-}
-
-.data-form .input-group .input-w-desc {
-  @apply flex;
-}
-
-.data-form .input-group .input-w-desc input {
-  @apply flex-1;
-}
-
-.data-form .input-group .input-w-desc .input-desc {
-  @apply bg-black/5 text-third  p-4 border dark:border-0 dark:bg-supporting-dark-first/20 dark:text-supporting-dark-first;
 }
 
 .input-w-desc.right input {
@@ -90,99 +74,55 @@ textarea,
 }
 
 .ck-content ol {
-  display: block;
-  list-style-type: decimal;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 40px;
+  @apply block list-decimal my-4 mx-0 pl-10;
 }
 
 .ck-content li {
-  display: list-item;
+  @apply list-item;
 }
+
 .ck-content p {
-  font-size: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  @apply text-base my-4;
 }
 
 .ck-content ul {
-  display: block;
-  list-style-type: disc;
-  margin-top: 1em;
-  margin-bottom: 1 em;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 40px;
+  @apply block list-disc my-4 mx-0 pl-10;
 }
 
 .ck-content a:link {
-  color: (internal value);
-  text-decoration: underline;
-  cursor: auto;
-}
-
-.ck-content a {
-  cursor: pointer;
+  @apply text-[#1a0dab] underline cursor-pointer;
 }
 
 .ck-content a:visited {
-  color: (internal value);
-  text-decoration: underline;
-  cursor: auto;
+  @apply text-[#681da8] underline cursor-pointer;
 }
 
 .ck-content a:link:active {
-  color: (internal value);
+  @apply text-blue-700;
 }
 
 .ck-content a:visited:active {
-  color: (internal value);
+  @apply text-purple-500;
 }
 
 .ck-content img {
-  display: inline-block;
+  @apply inline-block;
 }
 /* Switch Btn */
 .switch-input-group .switch {
-  position: relative;
-  display: inline-block;
-  width: 32px;
-  height: 22px;
+  @apply relative inline-block w-[32px] h-[22px];
 }
 
 .switch-input-group .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+  @apply opacity-0 w-0 h-0;
 }
 
 .switch-input-group .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  @apply absolute cursor-pointer inset-0 bg-supporting-light/20 transition-all duration-75;
 }
 
 .switch-input-group .slider:before {
-  position: absolute;
-  content: "";
-  height: 16px;
-  width: 16px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-
-  @apply dark:bg-dark-second;
+  @apply absolute content-[''] w-[16px] h-[16px] left-[3px] bottom-[3px] bg-white transition-all duration-75 dark:bg-dark-second;
 }
 
 .switch-input-group input:checked + .slider {
@@ -194,17 +134,15 @@ textarea,
 }
 
 .switch-input-group input:checked + .slider:before {
-  -webkit-transform: translateX(11px);
-  -ms-transform: translateX(11px);
-  transform: translateX(11px);
+  @apply translate-x-[11px];
 }
 
 .switch-input-group .slider.round {
-  border-radius: 34px;
+  @apply rounded-[34px];
 }
 
 .switch-input-group .slider.round:before {
-  border-radius: 50%;
+  @apply rounded-[50%];
 }
 
 /* Dropzone */
@@ -222,14 +160,17 @@ textarea,
 
 /* Form Validation */
 
+.input-group {
+  @apply mb-3 relative;
+}
 .input-group .text-help {
-  color: #dc1d34;
+  @apply text-danger absolute bottom-0;
 }
 
 .inline-label label {
-  display: inline;
+  @apply inline-block;
 }
 
 .pristine-error {
-  display: table;
+  @apply table;
 }
