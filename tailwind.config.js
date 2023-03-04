@@ -8,7 +8,7 @@ module.exports = {
         second: "#1BCFB4", //green
         third: "#524e83", //dark purple
         success: "#0D9488", //dark purple
-        danger: "#B91C1C", //dark purple
+        danger: "#B91C1C", //danger
         info: "#524e83", //dark purple
         "dark-first": "#25293c", //black
         "dark-second": "#2f3349", //light black

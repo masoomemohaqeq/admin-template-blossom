@@ -419,6 +419,10 @@ video {
   display: none;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: NotoSans;
 
@@ -778,10 +782,6 @@ h6 {
   z-index: 20;
 }
 
-.m-3 {
-  margin: 0.75rem;
-}
-
 .m-5 {
   margin: 1.25rem;
 }
@@ -900,6 +900,10 @@ h6 {
   height: 2.25rem;
 }
 
+.h-\[130px\] {
+  height: 130px;
+}
+
 .h-\[50px\] {
   height: 50px;
 }
@@ -915,6 +919,14 @@ h6 {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-\[100px\] {
+  height: 100px;
+}
+
+.h-\[120px\] {
+  height: 120px;
 }
 
 .max-h-0 {
@@ -985,6 +997,10 @@ h6 {
   width: 24rem;
 }
 
+.w-\[130px\] {
+  width: 130px;
+}
+
 .w-fit {
   width: -moz-fit-content;
   width: fit-content;
@@ -996,6 +1012,14 @@ h6 {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[100px\] {
+  width: 100px;
+}
+
+.w-\[120px\] {
+  width: 120px;
 }
 
 .max-w-sm {
@@ -1570,6 +1594,11 @@ h6 {
   color: rgb(255 255 255 / 0.7);
 }
 
+.text-supporting-first {
+  --tw-text-opacity: 1;
+  color: rgb(75 203 235 / var(--tw-text-opacity));
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -1693,6 +1722,10 @@ h6 {
 
 .ease-out {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 [data-mode="dark"] hr {
@@ -2646,6 +2679,48 @@ input.chk-tab:checked + .tab-content {
   .lg\:mx-auto {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .lg\:flex {
+    display: flex;
+  }
+
+  .lg\:basis-\[32\.3\%\] {
+    flex-basis: 32.3%;
+  }
+
+  .lg\:basis-\[49\%\] {
+    flex-basis: 49%;
+  }
+
+  .lg\:basis-\[65\.6\%\] {
+    flex-basis: 65.6%;
+  }
+
+  .lg\:flex-col {
+    flex-direction: column;
+  }
+
+  .lg\:flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  .lg\:items-center {
+    align-items: center;
+  }
+
+  .lg\:justify-between {
+    justify-content: space-between;
+  }
+
+  .lg\:gap-2 {
+    gap: 0.5rem;
+  }
+
+  .lg\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
   }
 
   .lg\:overflow-visible {

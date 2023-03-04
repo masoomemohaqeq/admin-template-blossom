@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 @layer base {
+  * {
+    box-sizing: border-box;
+  }
+
   @font-face {
     font-family: NotoSans;
     src: url("../fonts/NotoSans-ExtraLight.ttf");
@@ -79,6 +83,10 @@
   h6 {
     @apply text-lg;
   }
+}
+
+* {
+  box-sizing: border-box;
 }
 
 hr {

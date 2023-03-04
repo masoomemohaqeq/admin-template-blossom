@@ -417,10 +417,10 @@
           id="toggleSidebar"
         />
         <div
-          class="invisible opacity-0 dash-sidebar h-full bg-black/70 fixed inset-0 transition-all duration-200 z-20 xl:relative xl:visible xl:opacity-100 xl:z-0"
+          class="invisible opacity-0 dash-sidebar min-h-screen bg-black/70 fixed inset-0 transition-all duration-200 z-20 xl:relative xl:visible xl:opacity-100 xl:z-0"
         >
           <div
-            class="bg-third text-white w-5/6 p-4 h-screen dash-sidebar-menu -translate-x-96 transition-all max-w-sm xl:max-w-none xl:translate-x-0 xl:w-full dark:bg-dark-second dark:text-supporting-dark-first"
+            class="bg-third text-white w-5/6 p-4 min-h-screen dash-sidebar-menu -translate-x-96 transition-all max-w-sm xl:max-w-none xl:translate-x-0 xl:w-full dark:bg-dark-second dark:text-supporting-dark-first"
           >
             <div class="flex justify-between items-center">
               <div class="flex items-center space-x-2">
@@ -444,7 +444,7 @@
                     <label
                       class="p-4 w-full rounded-xl flex justify-between items-center current"
                     >
-                      <a href="../index.html">
+                      <a href="./index.html">
                         <div class="space-x-2">
                           <i class="fa-solid fa-house text-lg"></i>
                           <span> Dashboard </span>
@@ -524,6 +524,42 @@
                       </a>
                     </label>
                   </li>
+                  <li>
+                    <label
+                      class="p-4 w-full rounded-xl flex justify-between items-center"
+                    >
+                      <a href="#">
+                        <div class="space-x-2">
+                          <i class="fa-regular fa-comment"></i>
+                          <span> Chat </span>
+                        </div>
+                      </a>
+                    </label>
+                  </li>
+                  <li>
+                    <label
+                      class="p-4 w-full rounded-xl flex justify-between items-center"
+                    >
+                      <a href="#">
+                        <div class="space-x-2">
+                          <i class="fa-solid fa-chart-simple"></i>
+                          <span> Chart </span>
+                        </div>
+                      </a>
+                    </label>
+                  </li>
+                  <li>
+                    <label
+                      class="p-4 w-full rounded-xl flex justify-between items-center"
+                    >
+                      <a href="#">
+                        <div class="space-x-2">
+                          <i class="fa-regular fa-calendar"></i>
+                          <span> Calendar </span>
+                        </div>
+                      </a>
+                    </label>
+                  </li>
                 </ul>
               </div>
             </nav>
@@ -535,21 +571,31 @@
       <main
         class="xl:col-start-2 xl:col-end-7 xl:row-start-1 xl:mt-[62px] xl:container xl:mx-auto min-h-screen"
       >
-        <div class="p-4 w-full h-full space-y-5">
-          <div class="box">
-            <div class="p-3">
-              <h4 class="box-title">Welcome to Dashboard</h4>
-              <h6
-                class="box-desc text-supporting-light font-medium dark:text-white"
-              >
-                You can choose options in sidebar
-              </h6>
+        <div class="p-4 space-y-5 lg:space-y-0 lg:flex lg:flex-wrap lg:gap-2">
+          <div class="box lg:basis-[32.3%] lg:flex lg:justify-between">
+            <div class="lg:flex lg:justify-between lg:flex-col">
+              <div class="p-3">
+                <h4 class="box-title">Generated Leads</h4>
+                <h6
+                  class="box-desc text-supporting-light font-medium dark:text-white"
+                >
+                  Monthly Report
+                </h6>
+              </div>
+
+              <div class="p-3">
+                <div class="text-supporting-first text-xl font-semibold">
+                  <i class="fa-solid fa-chevron-up text-sm"></i>
+                  4,350
+                </div>
+              </div>
             </div>
-            <div>
-              <a href="#" class="btn-first m-3">View More</a>
+
+            <div class="relative w-[120px] h-[120px]">
+              <canvas id="doughnut-chart"></canvas>
             </div>
           </div>
-          <div class="box">
+          <div class="box lg:basis-[65.6%]">
             <div class="p-3">
               <h4 class="box-title">Statistics</h4>
             </div>
@@ -622,19 +668,20 @@
               </div>
             </div>
           </div>
-          <div class="box">
-            <div>
-              <canvas id="line-chart"></canvas>
-            </div>
+          <div class="box lg:basis-[49%]">
+            <canvas id="line-chart"></canvas>
+          </div>
+          <div class="box lg:basis-[49%]">
+            <canvas id="floating-bar-chart"></canvas>
           </div>
         </div>
       </main>
     </div>
 
-    <script src="/src/plugins/chartjs/utils.js"></script>
-    <script src="/src/plugins/chartjs/chart.min.js"></script>
+    <!-- <script src="/src/plugins/chartjs/utils-custom.js" ></script> -->
+    <script src="../../node_modules/chart.js/dist/chart.umd.js "></script>
 
     <script src="/src/js/global.js"></script>
-    <script src="/src/js/dashboard.js"></script>
+    <script src="/src/js/dashboard.js" type="module"></script>
   </body>
 </html>
