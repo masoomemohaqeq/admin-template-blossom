@@ -1,7 +1,4 @@
 //utils
-// import { valueOrDefault } from "../../../node_modules/chart.js/dist/helpers";
-
-// Adapted from http://indiegamr.com/generate-repeatable-random-numbers-in-js/
 var _seed = Date.now();
 
 const MONTHS = [
@@ -168,16 +165,10 @@ const lineData = {
   labels: LineLabels,
   datasets: [
     {
-      label: "Dataset 1",
+      label: "Earning",
       data: Utils.numbers(Line_NUMBER_CFG),
       borderColor: Utils.CHART_COLORS.green,
       backgroundColor: Utils.transparentize(Utils.CHART_COLORS.green, 0.5),
-    },
-    {
-      label: "Dataset 2",
-      data: Utils.numbers(Line_NUMBER_CFG),
-      borderColor: Utils.CHART_COLORS.blue,
-      backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
     },
   ],
 };
@@ -193,7 +184,7 @@ new Chart(lineCtx, {
       },
       title: {
         display: true,
-        text: "Chart.js Line Chart",
+        text: "Profit",
       },
     },
   },
@@ -244,14 +235,14 @@ const floatingBarData = {
   labels: floatingBarLabels,
   datasets: [
     {
-      label: "Dataset 1",
+      label: "Earning",
       data: floatingBarLabels.map(() => {
         return [Utils.rand(-100, 100), Utils.rand(-100, 100)];
       }),
       backgroundColor: Utils.CHART_COLORS.green,
     },
     {
-      label: "Dataset 2",
+      label: "Expense",
       data: floatingBarLabels.map(() => {
         return [Utils.rand(-100, 100), Utils.rand(-100, 100)];
       }),
@@ -271,7 +262,71 @@ new Chart(floatingBarCtx, {
       },
       title: {
         display: true,
-        text: "Chart.js Floating Bar Chart",
+        text: "Revenue Report",
+      },
+    },
+  },
+});
+
+// Scatter Chart
+const scatterCtx = document.getElementById("scatter-chart");
+
+const SCATTER_DATA_COUNT = 7;
+const SCATTER_NUMBER_CFG = {
+  count: SCATTER_DATA_COUNT,
+  rmin: 1,
+  rmax: 1,
+  min: -100,
+  max: 100,
+};
+
+const scatterData = {
+  datasets: [
+    {
+      label: "Dataset 1",
+      data: Utils.bubbles(SCATTER_NUMBER_CFG),
+      borderColor: Utils.CHART_COLORS.blue,
+      backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
+      yAxisID: "y",
+    },
+    {
+      label: "Dataset 2",
+      data: Utils.bubbles(SCATTER_NUMBER_CFG),
+      borderColor: Utils.CHART_COLORS.green,
+      backgroundColor: Utils.transparentize(Utils.CHART_COLORS.orange, 0.5),
+      yAxisID: "y2",
+    },
+  ],
+};
+
+new Chart(scatterCtx, {
+  type: "scatter",
+  data: scatterData,
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "top",
+      },
+      title: {
+        display: true,
+        text: "Chart.js Scatter Multi Axis Chart",
+      },
+    },
+    scales: {
+      y: {
+        type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+        position: "left",
+        ticks: {},
+      },
+      y2: {
+        type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+        position: "right",
+        reverse: true,
+        ticks: {},
+        grid: {
+          drawOnChartArea: false, // only want the grid lines for one axis to show up
+        },
       },
     },
   },

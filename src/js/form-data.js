@@ -42,12 +42,12 @@ Dropzone.autoDiscover = false;
 let myDropzone = new Dropzone("div#productDropzone", { url: "/file/post" });
 
 // create the pristine instance
-var pristine = new Pristine(form, {
+var profileForm = document.getElementById("product-form");
+
+var pristine = new Pristine(profileForm, {
   classTo: "input-group",
   errorTextParent: "input-group",
 });
-
-var profileForm = document.getElementById("product-form");
 
 var countryEl = document.getElementById("category-ts-control");
 

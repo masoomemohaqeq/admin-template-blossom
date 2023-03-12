@@ -782,6 +782,14 @@ h6 {
   z-index: 20;
 }
 
+.z-30 {
+  z-index: 30;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
 .m-5 {
   margin: 1.25rem;
 }
@@ -900,8 +908,8 @@ h6 {
   height: 2.25rem;
 }
 
-.h-\[130px\] {
-  height: 130px;
+.h-\[120px\] {
+  height: 120px;
 }
 
 .h-\[50px\] {
@@ -919,14 +927,6 @@ h6 {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[100px\] {
-  height: 100px;
-}
-
-.h-\[120px\] {
-  height: 120px;
 }
 
 .max-h-0 {
@@ -997,8 +997,8 @@ h6 {
   width: 24rem;
 }
 
-.w-\[130px\] {
-  width: 130px;
+.w-\[120px\] {
+  width: 120px;
 }
 
 .w-fit {
@@ -1012,14 +1012,6 @@ h6 {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-\[100px\] {
-  width: 100px;
-}
-
-.w-\[120px\] {
-  width: 120px;
 }
 
 .max-w-sm {
@@ -1215,6 +1207,12 @@ h6 {
   margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
 }
 
+.space-y-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+}
+
 .divide-y > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
@@ -1378,6 +1376,10 @@ h6 {
 
 .p-6 {
   padding: 1.5rem;
+}
+
+.p-8 {
+  padding: 2rem;
 }
 
 .px-3 {
@@ -1550,6 +1552,11 @@ h6 {
   color: rgb(13 148 136 / var(--tw-text-opacity));
 }
 
+.text-supporting-first {
+  --tw-text-opacity: 1;
+  color: rgb(75 203 235 / var(--tw-text-opacity));
+}
+
 .text-supporting-first\/80 {
   color: rgb(75 203 235 / 0.8);
 }
@@ -1592,11 +1599,6 @@ h6 {
 
 .text-white\/70 {
   color: rgb(255 255 255 / 0.7);
-}
-
-.text-supporting-first {
-  --tw-text-opacity: 1;
-  color: rgb(75 203 235 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -2126,10 +2128,10 @@ h6 {
     width: 33.333333%;
   }
 
-  .form-control,
+  .data-form .form-control,
 .data-form .input-group .input-w-desc,
 .dropzone,
-.ck.ck-reset,
+.ck.ck-editor,
 .data-form .input-group .ts-wrapper {
     width: 66.666667%;
   }
@@ -2214,6 +2216,10 @@ h6 {
 .data-form .input-group .input-w-desc.left .input-desc {
   border-top-left-radius: 0.375rem;
   border-bottom-left-radius: 0.375rem;
+}
+
+.ts-dropdown {
+  z-index: 11;
 }
 
 /* Ckeditor */
@@ -2626,12 +2632,28 @@ input.chk-tab:checked + .tab-content {
     flex: 1 1 0%;
   }
 
+  .md\:basis-\[33\%\] {
+    flex-basis: 33%;
+  }
+
+  .md\:basis-\[66\%\] {
+    flex-basis: 66%;
+  }
+
+  .md\:basis-full {
+    flex-basis: 100%;
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
 
   .md\:flex-col {
     flex-direction: column;
+  }
+
+  .md\:flex-wrap {
+    flex-wrap: wrap;
   }
 
   .md\:items-center {
@@ -2644,6 +2666,10 @@ input.chk-tab:checked + .tab-content {
 
   .md\:justify-evenly {
     justify-content: space-evenly;
+  }
+
+  .md\:gap-2 {
+    gap: 0.5rem;
   }
 
   .md\:gap-6 {
@@ -2668,6 +2694,12 @@ input.chk-tab:checked + .tab-content {
     margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
+  .md\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
+  }
+
   .md\:space-y-1 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
     margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
@@ -2681,46 +2713,8 @@ input.chk-tab:checked + .tab-content {
     margin-right: auto;
   }
 
-  .lg\:flex {
-    display: flex;
-  }
-
-  .lg\:basis-\[32\.3\%\] {
-    flex-basis: 32.3%;
-  }
-
-  .lg\:basis-\[49\%\] {
-    flex-basis: 49%;
-  }
-
-  .lg\:basis-\[65\.6\%\] {
-    flex-basis: 65.6%;
-  }
-
-  .lg\:flex-col {
-    flex-direction: column;
-  }
-
-  .lg\:flex-wrap {
-    flex-wrap: wrap;
-  }
-
-  .lg\:items-center {
-    align-items: center;
-  }
-
-  .lg\:justify-between {
-    justify-content: space-between;
-  }
-
-  .lg\:gap-2 {
-    gap: 0.5rem;
-  }
-
-  .lg\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-y-reverse: 0;
-    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(0px * var(--tw-space-y-reverse));
+  .lg\:basis-\[49\.5\%\] {
+    flex-basis: 49.5%;
   }
 
   .lg\:overflow-visible {

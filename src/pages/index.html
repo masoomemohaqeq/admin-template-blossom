@@ -44,7 +44,7 @@
           </div>
 
           <!-- Menu -->
-          <div class="flex md:flex-1 z-10">
+          <div class="flex md:flex-1 z-30">
             <!-- Search bar -->
             <div class="relative">
               <label for="toggle-search-modal">
@@ -417,10 +417,10 @@
           id="toggleSidebar"
         />
         <div
-          class="invisible opacity-0 dash-sidebar min-h-screen bg-black/70 fixed inset-0 transition-all duration-200 z-20 xl:relative xl:visible xl:opacity-100 xl:z-0"
+          class="invisible opacity-0 dash-sidebar h-full bg-black/70 fixed inset-0 transition-all duration-200 z-50 xl:relative xl:visible xl:opacity-100 xl:z-0"
         >
           <div
-            class="bg-third text-white w-5/6 p-4 min-h-screen dash-sidebar-menu -translate-x-96 transition-all max-w-sm xl:max-w-none xl:translate-x-0 xl:w-full dark:bg-dark-second dark:text-supporting-dark-first"
+            class="bg-third text-white w-5/6 p-4 min-h-screen h-full dash-sidebar-menu -translate-x-96 transition-all max-w-sm xl:max-w-none xl:translate-x-0 xl:w-full dark:bg-dark-second dark:text-supporting-dark-first"
           >
             <div class="flex justify-between items-center">
               <div class="flex items-center space-x-2">
@@ -516,7 +516,7 @@
                     <label
                       class="p-4 w-full rounded-xl flex justify-between items-center"
                     >
-                      <a href="../logins/loginV1.html">
+                      <a href="./logins/loginV1.html">
                         <div class="space-x-2">
                           <i class="fa-solid fa-right-to-bracket"></i>
                           <span> Login </span>
@@ -571,9 +571,9 @@
       <main
         class="xl:col-start-2 xl:col-end-7 xl:row-start-1 xl:mt-[62px] xl:container xl:mx-auto min-h-screen"
       >
-        <div class="p-4 space-y-5 lg:space-y-0 lg:flex lg:flex-wrap lg:gap-2">
-          <div class="box lg:basis-[32.3%] lg:flex lg:justify-between">
-            <div class="lg:flex lg:justify-between lg:flex-col">
+        <div class="p-4 space-y-5 md:space-y-0 md:flex md:flex-wrap md:gap-2">
+          <div class="box md:basis-[33%] flex justify-between">
+            <div class="flex justify-between flex-col">
               <div class="p-3">
                 <h4 class="box-title">Generated Leads</h4>
                 <h6
@@ -595,7 +595,7 @@
               <canvas id="doughnut-chart"></canvas>
             </div>
           </div>
-          <div class="box lg:basis-[65.6%]">
+          <div class="box md:basis-[66%]">
             <div class="p-3">
               <h4 class="box-title">Statistics</h4>
             </div>
@@ -668,17 +668,35 @@
               </div>
             </div>
           </div>
-          <div class="box lg:basis-[49%]">
+          <div class="box md:basis-full lg:basis-[49.5%]">
             <canvas id="line-chart"></canvas>
           </div>
-          <div class="box lg:basis-[49%]">
+          <div class="box md:basis-full lg:basis-[49.5%]">
             <canvas id="floating-bar-chart"></canvas>
+          </div>
+          <div class="box md:basis-full lg:basis-[49.5%]">
+            <div class="p-8 text-center space-y-3">
+              <div class="space-y-8">
+                <h3>Try our all new Enviroment with Pro Plan for Free</h3>
+
+                <a href="#" class="btn-second">Upgrade Plan</a>
+              </div>
+              <div class="">
+                <img
+                  src="../images/sammy-line-programming.png"
+                  class="mx-auto"
+                  alt="happy"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="box md:basis-full lg:basis-[49.5%]">
+            <canvas id="scatter-chart"></canvas>
           </div>
         </div>
       </main>
     </div>
 
-    <!-- <script src="/src/plugins/chartjs/utils-custom.js" ></script> -->
     <script src="../../node_modules/chart.js/dist/chart.umd.js "></script>
 
     <script src="/src/js/global.js"></script>
